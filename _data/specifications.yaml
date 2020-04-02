@@ -1,0 +1,60 @@
+- title: "Body Style"
+  value: "Saloon"
+
+- title: "Paint Colour"
+  value: "Black Crystal"
+
+- title: "Main Hide Colour"
+  value: "Fireglow"
+
+- title: "Secondary Hide Colour"
+  value: "Beluga"
+
+- title: "Veneer"
+  value: "Piano Black"
+
+- title: "Registration Date"
+  value: "2016"
+
+- title: "Mileage"
+  value: "3.500 km"
+
+- title: "Engine"
+  value: "6.75-litre twin-turbocharged"
+
+- title: "Transmission"
+  value: "8-speed transmission"
+
+- title: "Power"
+  value: "530 BHP (395 kW)"
+
+- title: "Torque"
+  value: "811 lb.ft (1100 Nm)"
+
+- title: "Acceleration"
+  value: "4.8s (0-60 mph)"
+
+- title: "Maximum Speed"
+  value: "190 mph (305 km/h)"
+
+- title: "Hand of Drive"
+  value: "Left Hand Drive"
+
+- title: "VIN"
+  value: "SCBBN6002805"
+
+- title: "CO2 Emissions"
+  value: "342 g/km"
+
+- title: "Fuel con. urban"
+  value: "23.4 l/100 km"
+
+- title: "Fuel con. extra urban"
+  value: "10.1 l/100 km"
+
+- title: "Fuel con. combined"
+  value: "15.0 l/100 km"
+
+- title: "Efficiency class"
+  value: "G"
+  label: true

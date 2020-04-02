@@ -1,0 +1,353 @@
+- title: "United Kingdom"
+  content:
+    - label: "England"
+      checked: true
+
+    - label: "Schottland"
+      disabled: true
+
+    - label: "Wales"
+
+    - label: "Nordirland"
+
+- title: "The Americas"
+  active: true
+  content:
+    - label: "Bahamas"
+
+    - label: "Barbados"
+
+    - label: "Canada"
+
+    - label: "Costa Rica"
+      disabled: true
+
+    - label: "Cuba"
+      checked: true
+      disabled: true
+
+    - label: "Dominica"
+
+    - label: "Dominican Republic"
+      checked: true
+
+    - label: "El Salvador"
+
+    - label: "Grenada"
+
+    - label: "Guatemala"
+
+    - label: "Haiti"
+
+    - label: "Honduras"
+
+    - label: "Jamaica"
+
+    - label: "Mexico"
+
+    - label: "Nicaragua"
+
+    - label: "Panama"
+
+    - label: "Trinidad and Tobago"
+
+    - label: "United States of America"
+      checked: true
+
+- title: "Continental Europe"
+  content:
+    - label: "Austria"
+      checked: true
+
+    - label: "Azerbaijan"
+
+    - label: "Belarus"
+
+    - label: "Belgium"
+
+    - label: "Czech Republic"
+
+    - label: "Denmark"
+      checked: true
+
+    - label: "France"
+
+    - label: "Germany"
+      checked: true
+
+    - label: "Latvia"
+
+    - label: "Luxembourg"
+      checked: true
+      disabled: true
+
+    - label: "Monaco"
+
+    - label: "Netherlands"
+      checked: true
+
+    - label: "Poland"
+
+    - label: "Russia"
+      disabled: true
+
+    - label: "Spain"
+
+    - label: "Sweden"
+
+    - label: "Switzerland"
+      checked: true
+
+- title: "MIDDLE EAST | AFRICA | INDIA"
+  content:
+    - label: "Algeria"
+
+    - label: "Angola"
+
+    - label: "Botswana"
+
+    - label: "Burkina Faso"
+
+    - label: "Burundi"
+
+    - label: "Cabo Verde"
+
+    - label: "Cameroon"
+
+    - label: "Chad"
+      checked: true
+
+    - label: "Republic of the Congo"
+
+    - label: "Egypt"
+
+    - label: "Equatorial Guinea"
+
+    - label: "Eritrea"
+
+    - label: "Ethiopia"
+      checked: true
+
+    - label: "Gambia"
+
+    - label: "Ghana"
+
+    - label: "Guinea"
+
+    - label: "Kenya"
+
+    - label: "Lesotho"
+
+    - label: "Liberia"
+
+    - label: "Libya"
+
+    - label: "Madagascar"
+
+    - label: "Malawi"
+
+    - label: "Mali"
+
+    - label: "Mauritania"
+
+    - label: "Mauritius"
+
+    - label: "Morocco"
+
+    - label: "Mozambique"
+
+    - label: "Namibia"
+      checked: true
+
+    - label: "Niger"
+      checked: true
+      disabled: true
+
+    - label: "Nigeria"
+      disabled: true
+
+    - label: "Rwanda"
+
+    - label: "Senegal"
+
+    - label: "Seychelles"
+
+    - label: "Sierra Leone"
+
+    - label: "Somalia"
+
+    - label: "South Africa"
+
+    - label: "South Sudan"
+
+    - label: "Sudan"
+
+    - label: "Tanzania"
+
+    - label: "Togo"
+
+    - label: "Tunisia"
+
+    - label: "Uganda"
+
+    - label: "Zambia"
+
+    - label: "Zimbabwe"
+
+- title: "Asia Pacific"
+  content:
+    - label: "Afghanistan"
+
+    - label: "Armenia"
+
+    - label: "Azerbaijan"
+
+    - label: "Bahrain"
+
+    - label: "Bangladesh"
+
+    - label: "Bhutan"
+
+    - label: "Brunei"
+
+    - label: "Cambodia"
+
+    - label: "China"
+
+    - label: "Cyprus"
+
+    - label: "Georgia"
+      checked: true
+
+    - label: "India"
+      checked: true
+
+    - label: "Indonesia"
+      checked: true
+
+    - label: "Iran"
+      checked: true
+
+    - label: "Iraq"
+      checked: true
+
+    - label: "Israel"
+
+    - label: "Japan"
+
+    - label: "Jordan"
+
+    - label: "Kazakhstan"
+
+    - label: "Kuwait"
+
+    - label: "Kyrgyzstan"
+
+    - label: "Laos"
+
+    - label: "Lebanon"
+
+    - label: "Malaysia"
+
+    - label: "Maldives"
+
+    - label: "Mongolia"
+
+    - label: "Myanmar"
+
+    - label: "Nepal"
+
+    - label: "North Korea"
+
+    - label: "Oman"
+
+    - label: "Pakistan"
+
+    - label: "Palestine"
+
+    - label: "Philippines"
+
+    - label: "Qatar"
+
+    - label: "Russia"
+
+    - label: "Saudi Arabia"
+
+    - label: "Singapore"
+
+    - label: "South Korea"
+
+    - label: "Sri Lanka"
+
+    - label: "Syria"
+
+    - label: "Taiwan"
+
+    - label: "Tajikistan"
+
+    - label: "Thailand"
+
+    - label: "Timor-Leste"
+
+    - label: "Turkey"
+
+    - label: "Turkmenistan"
+
+    - label: "United Arab Emirates"
+
+    - label: "Uzbekistan"
+
+    - label: "Vietnam"
+
+    - label: "Yemen"
+
+- title: "China"
+  content:
+    - label: "Anhui"
+
+    - label: "Fujian"
+
+    - label: "Gansu "
+
+    - label: "Guangdong"
+
+    - label: "Guizhou"
+
+    - label: "Hainan"
+
+    - label: "Hebei"
+
+    - label: "Heilongjiang"
+
+    - label: "Henan"
+
+    - label: "Hubei"
+
+    - label: "Hunan"
+
+    - label: "Jiangsu"
+
+    - label: "Jiangxi"
+      disabled: true
+
+    - label: "Jilin"
+      checked: true
+      disabled: true
+
+    - label: "Liaoning"
+      checked: true
+
+    - label: "Qinghai"
+      checked: true
+
+    - label: "Shaanxi"
+
+    - label: "Shandong"
+
+    - label: "Shanxi"
+
+    - label: "Sichuan"
+
+    - label: "Yunnan"
+
+    - label: "Zhejiang"

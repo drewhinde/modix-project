@@ -1,0 +1,20 @@
+- title: "Model"
+  value: "XC70"
+
+- title: "Price"
+  from: "Eur 15.000"
+  to: "Eur 35.000"
+
+- title: "Mileage"
+  from: "10,000 KM"
+  to: "100,000 KM"
+
+- title: "Warranty"
+  value: "12 month"
+
+- title: "Radius"
+  value: "Within 50 KM"
+
+- title: "Age"
+  from : "2013"
+  to: "2016"

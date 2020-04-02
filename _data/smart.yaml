@@ -1,0 +1,111 @@
+- content:
+  - title: "Hatchback"
+    icon: "hatchback"
+    active: false
+    disabled: false
+
+  - title: "Saloon"
+    icon: "saloon"
+    active: false
+    disabled: false
+
+  - title: "Estate"
+    icon: "estate"
+    active: false
+    disabled: false
+
+  - title: "Coupe"
+    icon: "coupe"
+    active: false
+    disabled: false
+
+  - title: "SUV"
+    icon: "suv"
+    active: false
+    disabled: false
+
+  - title: "People Carrier"
+    icon: "people-carrier"
+    active: false
+    disabled: false
+
+- content:
+  - title: "Beige"
+    active: false
+    disabled: false
+
+  - title: "Blue"
+    active: false
+    disabled: false
+
+  - title: "Brown"
+    active: false
+    disabled: false
+
+  - title: "Yellow"
+    active: false
+    disabled: false
+
+  - title: "Gray"
+    active: false
+    disabled: false
+
+  - title: "Green"
+    active: false
+    disabled: false
+
+  - title: "Orange"
+    active: false
+    disabled: false
+
+  - title: "Red"
+    active: false
+    disabled: false
+
+  - title: "Black"
+    active: false
+    disabled: false
+
+  - title: "Silver"
+    active: false
+    disabled: false
+
+  - title: "White"
+    active: false
+    disabled: false
+
+- content:
+  - title: "Bluetooth"
+    icon: "bluetooth"
+    active: false
+    disabled: false
+
+  - title: "IsoFix"
+    icon: "isofix"
+    active: false
+    disabled: false
+
+  - title: "Air conditioning"
+    icon: "aircondition"
+    active: false
+    disabled: false
+
+  - title: "VAT rect."
+    icon: "vat"
+    active: false
+    disabled: false
+
+  - title: "Sat nav"
+    icon: "navi"
+    active: false
+    disabled: false
+
+  - title: "Heated seats"
+    icon: "heated-seats"
+    active: false
+    disabled: false
+
+  - title: "MP3"
+    icon: "mp3"
+    active: false
+    disabled: false

@@ -1,0 +1,11 @@
+- title: "Comparison"
+  class: "compare"
+  count: "2"
+
+- title: "Favourites"
+  class: "notepad"
+  count: "3"
+
+- title: "Saved Searches"
+  class: "saved-searches"
+  count: "5"

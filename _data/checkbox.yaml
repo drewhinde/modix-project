@@ -1,0 +1,29 @@
+- label: Régulateur de vitesse
+  id: 1
+  checked: true
+
+- label: park distance control
+  id: 2
+
+- label: bluetooth
+  id: 3
+  checked: true
+  disabled: true
+
+- label: Finition en cuir
+  id: 4
+
+- label: Jantes aluminium
+  id: 5
+  checked: true
+
+- label: Aide au stationnement
+  id: 6
+  checked: true
+
+- label: navigation GPS
+  id: 7
+  disabled: true
+
+- label: Climatisation
+  id: 8

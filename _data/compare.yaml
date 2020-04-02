@@ -1,0 +1,62 @@
+- title: Farbe
+  value:
+    - title: Schwarz
+    - title: Rot
+
+- title: Leistung
+  value:
+    - title: 136 kW / 185 PS
+    - title: 136 kW / 185 PS
+
+- title: Erstzulassung
+  value:
+    - title: "01.2016"
+    - title: "07.2015"
+
+- title: Kilometerstand
+  value:
+    - title: 16.000 km
+    - title: 5.000 km
+
+- title: Fahrzeugart
+  value:
+    - title: Neuwagen
+    - title: Gebrauchtwagen
+
+- title: Getriebe
+  value:
+    - title: Manuell
+    - title: Automatik
+
+- title: Kraftstoff
+  value:
+    - title: Diesel
+    - title: Super Plus
+
+- title: ø kombiniert
+  value:
+    - title: 4,8 l / 100 km
+    - title: 4,8 l / 100 km
+
+- title: ø innerorts
+  value:
+    - title: 4,8 l / 100 km
+    - title: 4,8 l / 100 km
+
+- title: ø außerorts
+  value:
+    - title: 4,8 l / 100 km
+    - title: 4,8 l / 100 km
+
+- title: ø CO2-Emission
+  value:
+    - title: 112 g / km
+    - title: 112 g / km
+
+- title: Effizienzklasse
+  value:
+    - title: C
+      img: true
+    - title: C
+      img: true
+

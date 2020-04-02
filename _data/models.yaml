@@ -1,0 +1,100 @@
+- title: "Mulsanne"
+  count: "7"
+  consumption: "a+"
+  price: "379.900"
+  video: true
+
+- title: "Mulsanne Extended Wheelbase"
+  count: "3"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Mulsanne Speed"
+  count: "1"
+  consumption: "b"
+  price: "379.900"
+
+- title: "Mulsanne"
+  count: "2"
+  consumption: "c"
+  price: "379.900"
+
+- title: "Flying Spur"
+  count: "15"
+  consumption: "d"
+  price: "379.900"
+
+- title: "Flying Spur V8"
+  count: "2"
+  consumption: "e"
+  price: "379.900"
+
+- title: "Flying Spur V8 S"
+  count: "7"
+  consumption: "f"
+  price: "379.900"
+
+- title: "Flying Spur W12"
+  count: "3"
+  consumption: "g"
+  price: "379.900"
+
+- title: "Flying Spur W12 S"
+  count: "2"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental"
+  count: "20"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT"
+  count: "8"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT Convertible"
+  count: "2"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT V8"
+  count: "3"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT V8 Convertible"
+  count: "1"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT V8 S"
+  count: "2"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT V8 S Convertible"
+  count: "1"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT Speed"
+  count: "2"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental GT Speed Convertible"
+  count: "1"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental Supersports"
+  count: "0"
+  consumption: "a"
+  price: "379.900"
+
+- title: "Continental Supersports Convertible"
+  count: "0"
+  consumption: "a"
+  price: "379.900"

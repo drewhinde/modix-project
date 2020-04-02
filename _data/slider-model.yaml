@@ -1,0 +1,35 @@
+- img: "01"
+  custom-paging: SUV/Crossover
+  custom-paging-model-count: 4
+  title: XC60
+  stock: 106 in stock, from 40.000&nbsp;€
+
+- img: "02"
+  custom-paging: Estate/Hatchback
+  custom-paging-model-count: 3
+  title: XC90
+  stock: 125 in stock, from 50.000&nbsp;€
+
+- img: "03"
+  custom-paging: Saloon
+  custom-paging-model-count: 22
+  title: V40
+  stock: 0 in stock, from 40.000&nbsp;€
+
+- img: "04"
+  custom-paging: Cross country
+  custom-paging-model-count: 19
+  title: V70
+  stock: 106 in stock, from 40.000&nbsp;€
+
+- img: "05"
+  custom-paging: Hybrid
+  custom-paging-model-count: 5
+  title: S60
+  stock: 106 in stock, from 40.000&nbsp;€
+
+- img: "06"
+  custom-paging: other models
+  custom-paging-model-count: 7
+  title: C70
+  stock: 106 in stock, from 40.000&nbsp;€

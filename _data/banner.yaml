@@ -1,0 +1,33 @@
+- bold: Financez simplement
+  regular: votre prochaine voiture
+  color:
+  background: orange
+  invert: true
+  button: Choisissez votre financement
+  hover:
+  column:
+    - icon: magnifier
+      text: Trouvez votre futur véhicule
+
+    - icon: money
+      text: Définissez les modalités de votre financement
+
+    - icon: pencil
+      text: Prenez votre décision
+
+- bold: Vendez votre voiture rapidement
+  regular: nous la rachetons sous 48 heures
+  color: cyan
+  background: white
+  invert:
+  button: Estimer ma voiture
+  hover: true
+  column:
+    - icon: calculator
+      text: Estimez votre voiture en ligne
+
+    - icon: store
+      text: Présentez-là dans une de nos concessions
+
+    - icon: clock
+      text: Recevez votre paiement sous 48 heures

@@ -1,0 +1,75 @@
+- label: "Petrol"
+  checked: true
+
+- label: "Diesel"
+  disabled: true
+
+- label: "Electric"
+  disabled: true
+  checked: true
+
+- label: "Hybrid"
+
+- label: "Manual"
+
+- label: "Automatic"
+
+- label: "All"
+
+- label: "White"
+
+- label: "Grey"
+  checked: true
+
+- label: "Beige"
+
+- label: "Yellow"
+
+- label: "Brown"
+  disabled: true
+
+- label: "Purple"
+  checked: true
+  disabled: true
+
+- label: "Green"
+
+- label: "Metallic"
+
+- label: "Silver"
+
+- label: "Black"
+
+- label: "Gold"
+
+- label: "Orange"
+  checked: true
+
+- label: "Red"
+
+- label: "Blue"
+
+- label: "Leather seats"
+
+- label: "Sliding roof"
+
+- label: "Navigation system"
+
+- label: "Car alarm"
+  checked: true
+
+- label: "Cruise control"
+
+- label: "Parking sensors"
+
+- label: "All wheel drive"
+
+- label: "Xenon lights"
+
+- label: "Electric windows"
+  checked: true
+
+- label: "Heated seats"
+
+- label: "Air conditioning"
+

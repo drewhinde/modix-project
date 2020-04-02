@@ -1,0 +1,39 @@
+- label: "Price"
+  prefix: "to"
+  unit: "£"
+  step: 1000
+  min: 0
+  max: 100000
+  start: 0
+  stop: 100000
+  group: "."
+
+- label: "Mileage"
+  prefix: "to"
+  unit: "mi"
+  step: 1000
+  min: 10
+  max: 100000
+  start: 10000
+  stop: 50000
+  group: "."
+
+- label: "1st reg."
+  prefix: "to"
+  unit: ""
+  step: 1
+  min: 2000
+  max: 2017
+  start: 2010
+  stop: 2016
+  group: ""
+
+- label: "Power (HP)"
+  prefix: "to"
+  unit: "HP"
+  step: 25
+  min: 45
+  max: 400
+  start: 100
+  stop: 200
+  group: ""

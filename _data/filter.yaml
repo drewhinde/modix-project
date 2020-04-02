@@ -1,0 +1,22 @@
+- title: "All"
+  icon: "wheel"
+  active: true
+
+- title: "Town"
+  icon: "buildings"
+
+- title: "Sport"
+  icon: "running"
+
+- title: "Family"
+  icon: "family"
+
+- title: "MPV"
+  icon: "mpv"
+
+- title: "SUV"
+  icon: "mountain"
+
+- title: "Vans"
+  icon: "van"
+

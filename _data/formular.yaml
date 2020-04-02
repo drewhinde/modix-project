@@ -1,0 +1,37 @@
+- label: "Title"
+  type: "select"
+
+- label: "First name"
+  type: "text"
+
+- label: "Last name"
+  type: "text"
+
+- label: "Email"
+  type: "text"
+
+- label: "Contact number"
+  type: "text"
+
+- label: "Postcode"
+  type: "text"
+
+- label: "Address 1"
+  type: "text"
+
+- label: "Address 2"
+  type: "text"
+
+- label: "City/Town"
+  type: "text"
+
+- label: "Country/State"
+  type: "text"
+
+- label: "Country"
+  type: "select"
+
+- label: "Comments"
+  type: "textarea"
+  placeholder: "Predefined text to enquire about this vehicle. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+  block: true

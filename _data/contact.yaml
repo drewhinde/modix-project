@@ -1,0 +1,28 @@
+- name: "Anthony Bruynseels"
+  street: "Street 56"
+  town: "012345 City -Germany"
+  position: "Sales consultant"
+  img: "01"
+  online: true
+
+- name: "Anthony Bruynseels"
+  street: "Street 56"
+  town: "012345 City -Germany"
+  position: "Sales consultant"
+  img: "02"
+  online: false
+
+- name: "Anthony Bruynseels"
+  street: "Street 56"
+  town: "012345 City -Germany"
+  position: "Sales consultant"
+  img: "02"
+  online: false
+
+- name: "Anthony Bruynseels"
+  street: "Street 56"
+  town: "012345 City -Germany"
+  position: "Sales consultant"
+  img: "02"
+  online: true
+

@@ -1,0 +1,19 @@
+- label: "Make"
+  option:
+    - value: ""
+
+- label: "Model"
+  option:
+    - value: ""
+
+- label: "Stock"
+  option:
+    - value: ""
+
+- label: "ZIP code"
+  option:
+    - value: ""
+
+- label: "Radius"
+  option:
+    - value: ""
