@@ -1,0 +1,245 @@
+<section class="container-full pos-relative">
+	<div class="container">
+		<div class="tiles-container-15 s-space-5 m-space-10">
+			<div class="column s100 m100 l100">
+				<div class="h2 text-center">Services & Offers</div>
+			</div>
+
+			<div class="column s100 m100 l100">
+				<div class="tiles-container-15 news-slide pre-slick" data-max="2" data-max-scroll="2">
+					{% for news in site.data.news-item %}
+						{% include _news-item.html button-length="l50" %}
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="column s100 m100 l100 text-center">
+				<a href="#" class="button btn-primary inline-block s100 m33 l25">Show all offers</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="container-full pos-relative">
+	<div class="container">
+		<div class="tiles-container-15 s-space-5 m-space-10">
+			<div class="column s100 m100 l100">
+				<div class="h2 text-center">What is Volvo Select?</div>
+			</div>
+
+			<div class="column s100 m50 l50">
+				<figure class="responsive format-3x2 img-bg">
+					<img src="modix-datadir/img/3x2/placeholder-3x2_01.jpg" alt="{{ site.title}}" class="img-responsive h-v-center"/>
+				</figure>
+			</div>
+
+			<div class="column s100 m50 l50">
+				<div class="tiles-container-15">
+					<div class="column s100 m100 l100">
+						<div class="tiles-container-3">
+							<div class="column s100 m100 l100">
+								<div class="h4">Volvo Selekt is the smartest way to buy a used Volvo</div>
+							</div>
+
+							<div class="column s100 m100 l100">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat illum at, odit ipsam perspiciatis nesciunt expedita maiores architecto animi recusandae, magni cumque quas earum nulla tenetur repellendus, est sapiente delectus.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="column s100 m100 l100">
+						<ul class="unstyle">
+							<li class="equipment-item">Lorem ipsum dolor sit amet, consectetur</li>
+							<li class="equipment-item">Adipisicing elit, sed do eiusmod tempor incididunt ut labore</li>
+							<li class="equipment-item">Et dolore magna aliqua ut enim</li>
+							<li class="equipment-item">Ad minim veniam, quis nostrud</li>
+							<li class="equipment-item">Exercitation ullamco laboris nisi ut aliquip ex</li>
+							<li class="equipment-item">Commodo consequat duis aute irure</li>
+						</ul>
+					</div>
+
+					<div class="column s100 m100 l100">
+						<a href="#" class="button btn-secondary inline-block">More about Volvo Selekt</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="container-full pos-relative">
+	<div class="container">
+		<div class="tiles-container-15 s-space-5 m-space-10">
+			<div class="column s100 m100 l100">
+				<div class="h3 text-center">Volvo dealer: Sentinel</div>
+			</div>
+
+			<div class="column s100 m100 l100">
+				<div class="content-tab-parent">
+					<div class="btn-tab-navi text-center tiles-container-15 s-space-5 vertical-collapse">
+						<a href="#" class="column s50 btn-tab active">Address & Opening hours</a><a href="#" class="column s50 btn-tab">Contact form</a>
+					</div>
+
+					<div class="tab-contents">
+						<div class="tab-frame">
+							<div class="tiles-container-15 vertical-collapse">
+								<div class="column s100 m100 lm33 l25">
+									<div class="tiles-container-3">
+										<div class="column s100 m100 l100">
+											<div class="h4">Sentinel</div>
+										</div>
+
+										<div class="column s100 m100 l100">
+											<table class="table inline-block s100 m100 l100">
+												<tbody class="inline-block s100 m100 l100">
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s100 m100 l100">
+														 596-598 Seven Sisters Road
+														</td>
+													</tr>
+
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s100 m100 l100">
+															London
+														</td>
+													</tr>
+
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s100 m100 l100">
+															N15 6HR
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+										<div class="column s100 m100 l100">
+											<div class="bold size-l" data-phone="{{ site.phone }}" title="Call {{ site.phone }}">{{ site.phone }}</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="column s100 m50 lm33 l25">
+									<div class="tiles-container-3">
+										<div class="column s100 m100 l100">
+											<div class="h4">Opening hours – <span class="uppercase">Sales</span></div>
+										</div>
+
+										<div class="column s100 m100 l100">
+											<table class="table inline-block s100 m100 l100">
+												<tbody class="inline-block s100 m100 l100">
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s50 m50 l50">
+															Monday – Friday
+														</td>
+														<td class="inline-block s50 m50 l50">
+															8:00 – 18:00
+														</td>
+													</tr>
+
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s50 m50 l50">
+															Saturday
+														</td>
+														<td class="inline-block s50 m50 l50">
+															9:00 – 16:00
+														</td>
+													</tr>
+
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s50 m50 l50">
+															Sunday
+														</td>
+														<td class="inline-block s50 m50 l50">
+															Closed
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+
+								<div class="column s100 m50 lm33 l25">
+									<div class="tiles-container-3">
+										<div class="column s100 m100 l100">
+											<div class="h4">Opening hours – <span class="uppercase">Service</span></div>
+										</div>
+
+										<div class="column s100 m100 l100">
+											<table class="table inline-block s100 m100 l100">
+												<tbody class="inline-block s100 m100 l100">
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s50 m50 l50">
+															Monday – Friday
+														</td>
+														<td class="inline-block s50 m50 l50">
+															8:00 – 18:00
+														</td>
+													</tr>
+
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s50 m50 l50">
+															Saturday
+														</td>
+														<td class="inline-block s50 m50 l50">
+															9:00 – 14:00
+														</td>
+													</tr>
+
+													<tr class="inline-block s100 m100 l100">
+														<td class="inline-block s50 m50 l50">
+															Sunday
+														</td>
+														<td class="inline-block s50 m50 l50">
+															Closed
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+
+								<div class="column s100 m100 l100">
+									{% include _map.html height="470" %}
+								</div>
+
+								<div class="column s100 m100 l100">
+									<div class="tiles-container-10 s-space-5">
+										<div class="column s100 m100 l100">
+											<div class="bold size-l">All Sentinel locations</div>
+										</div>
+
+										<div class="column s100 m50 lm33 l25">
+											<div class="h4">London: <a href="#" title="Show location on map">Show location on map</a></div>
+											<a href="#" class="black" title="Go to website">Go to website</a>
+										</div>
+
+										<div class="column s100 m50 lm33 l25">
+											<div class="h4">Woodford: <a href="#" title="Show location on map">Show location on map</a></div>
+											<a href="#" class="black" title="Go to website">Go to website</a>
+										</div>
+
+										<div class="column s100 m50 lm33 l25">
+											<div class="h4">Stratford: <a href="#" title="Show location on map">Show location on map</a></div>
+											<a href="#" class="black" title="Go to website">Go to website</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-frame">
+							<div class="tiles-container-15 vertical-collapse">
+								<div class="column s100 m100 l100">
+									Contact form
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

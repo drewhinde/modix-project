@@ -1,0 +1,29 @@
+<div id="result-tools-top" class="tiles-container-10 s-space-5">
+	<div id="view" class="column s-hide ms30 m20 l20 vertical-middle">
+		<div class="columns-container-5">
+			<div class="column text-center">
+				<a class="view inline-block {{ site.title | downcase }}-icons-list {% if page.mode == "list" %} active{% endif %}" data-view="list" data-max="" title="List-View"></a>
+			</div>
+
+			<div class="column text-center">
+				<a class="view inline-block {{ site.title | downcase }}-icons-grid {% if page.mode == "grid" %} active{% endif %}" data-view="grid" data-max="" title="Grid-View"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="column s100 ms40 m60 l60 text-center found mdx-match h1 light uppercase">
+		<div class="mdx-match-plural"><span class="total-found">44</span> {{ site.title }}s found</div>
+		<div class="mdx-match-singular hide"><span class="total-found">4</span> {{ site.title }} found</div>
+	</div>
+
+	<div class="tool-part page-sort column s100 ms30 m20 l20 vertical-middle">
+		<select>
+			<option value="" selected="">Price ascending</option>
+			<option value="">Price descending</option>
+		</select>
+	</div>
+
+	<div class="column block text-center">
+		<p class="muted">*Approximate price. Price in local currency is shown on vehicle detail page.</p>
+	</div>
+</div>

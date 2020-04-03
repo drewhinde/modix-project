@@ -1,0 +1,167 @@
+<section class="container-full pos-relative">
+	<div class="container">
+		<div class="tiles-container-15 m-space-10 s-space-5">
+			<div class="column s100 m100 l100">
+				<div class="tiles-container-3 text-center">
+					<div class="column s100 m100 l100">
+						<div class="uppercase h4">Your favorite Volvos</div>
+					</div>
+
+					<div class="column s100 m100 l100">
+						<div class="headline highlight">Get your Volvo now</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="column s100 m100 l100 text-center">
+				<div class="inline-block s66 l45">
+					<div class="tiles-container-1 close-to-buy-slide pre-slick" data-max="3" data-max-scroll="3">
+						{% for model in site.data.models | limit:3 %}
+							{% include _close-to-buy-item.html %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+
+			<div class="s100 m50 l50 column">
+				<div class="tiles-container-3">
+					<div class="column s100 m100 l100 pos-relative">
+						<div class="tiles-container-3 vertical-collapse">
+							<figure class="column s100 m100 l100 vdp-zoom-trigger">
+								<a class="responsive img-bg format-3x2 trigger-xxl" href="#">
+									<img src="modix-datadir/img/3x2/placeholder-3x2_02.jpg" class="img-responsive h-v-center" alt="{{ site.title }}">
+								</a>
+
+								<button type="button" class="vdp-arrows vdp-arrows-left">
+									<span class="volvo-icons-left"></span>
+								</button>
+
+								<button type="button" class="vdp-arrows vdp-arrows-right">
+									<span class="volvo-icons-right"></span>
+								</button>
+
+								<button type="button" class="vdp-zoom">
+									<span class="volvo-icons-zoom"></span>
+								</button>
+							</figure>
+							<figure class="column s20 m20 l20">
+								<a class="responsive img-bg format-3x2 trigger-xxl" href="#">
+									<img src="modix-datadir/img/3x2/placeholder-3x2_01.jpg" class="img-responsive h-v-center" alt="{{ site.title }}">
+								</a>
+							</figure>
+							<figure class="column s20 m20 l20">
+								<a class="responsive img-bg format-3x2 trigger-xxl" href="#">
+									<img src="modix-datadir/img/3x2/placeholder-3x2_03.jpg" class="img-responsive h-v-center" alt="{{ site.title }}">
+								</a>
+							</figure>
+							<figure class="column s20 m20 l20">
+								<a class="responsive img-bg format-3x2 trigger-xxl" href="#">
+									<img src="modix-datadir/img/3x2/placeholder-3x2_04.jpg" class="img-responsive h-v-center" alt="{{ site.title }}">
+								</a>
+							</figure>
+							<figure class="column s20 m20 l20">
+								<a class="responsive img-bg format-3x2 trigger-xxl" href="#">
+									<img src="modix-datadir/img/3x2/placeholder-3x2_05.jpg" class="img-responsive h-v-center" alt="{{ site.title }}">
+								</a>
+							</figure>
+							<figure class="column s20 m20 l20">
+								<a class="responsive img-bg format-3x2 trigger-xxl" href="#">
+									<img src="modix-datadir/img/3x2/placeholder-3x2_06.jpg" class="img-responsive h-v-center" alt="{{ site.title }}">
+								</a>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="s100 m50 l50 column">
+				<div class="tiles-container-10">
+					<div class="column s100 m100 l100">
+						<div class="tiles-container-1">
+							<div class="column s100 m100 l100">
+								<div class="h3 black">2015 (15) Volvo XC90</div>
+							</div>
+
+							<div class="column s100 m100 l100">
+								<div class="bold">II Inscription + 3 Years Warranty + 1 Year Volvo Assistance</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="column s100 m100 l50">
+						<div class="tiles-container-15">
+							<div class="column s100 m100 l100">
+								<table class="table inline-block s100 m100 l100">
+									<tbody class="inline-block s100 m100 l100">
+									{% for table in site.data.table | offset:14 %}
+										<tr class="inline-block s100 m100 l100">
+											<td class="inline-block s50 m50 l50">
+												<div class="small bold">{{ table.title }}</div>
+											</td>
+
+											<td class="inline-block s50 m50 l50">
+												<div class="small bold">{{ table.content }}</div>
+											</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div class="column s100 m100 l50">
+						<div class="tiles-container-10">
+							<div class="column s100 m100 lm50 l100">
+								<ul class="unstyle line-height-secondary">
+									<li>
+										<address class="small">
+											<span class="bold">Sentinel</span> <br>
+												596-598 Seven Sisters Road, <br>
+												<span class="uppercase">London N15 6HR</span><br>
+										</address>
+									</li>
+
+									<li><a href="#" class="link small">Get directions</a></li>
+									<li><a href="#" class="link small">Visit dealer stock</a></li>
+								</ul>
+							</div>
+
+							<div class="column s100 m100 lm50 l100">
+								<div class="tiles-container-15">
+									<div class="column s100 m100 l100">
+										<div class="size-l h4 call-us">Call us: <br>
+											<span data-phone="02088 002200">02088 002200</span>
+										</div>
+									</div>
+
+									<div class="column s100 m100 l100">
+										<div class="inline-block s100 m100 l100 h3 black">£56,000</div>
+										<div class="inline-block s100 m100 l100">VAT. recl.</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="column s100 m100 l100">
+						<hr class="hr hr-secondary">
+					</div>
+
+					<div class="column s100 m100 l100">
+						<div class="tiles-container-5">
+							<div class="column s100 m100 l50">
+								<a href="#" class="button btn-secondary inline-block s100 m100 l100" title="Vehicle details">Vehicle details</a>
+							</div>
+
+							<div class="column s100 m100 l50">
+								<a href="#" class="button btn-primary inline-block s100 m100 l100" title="Contact Dealer">Contact Dealer</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

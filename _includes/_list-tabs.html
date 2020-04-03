@@ -1,0 +1,117 @@
+<div class="container container-no-border vehicle-infos s-hide ms-hide">
+	<div class="content-tab-parent">
+		<div class="btn-tab-navi tiles-container-5 vertical-collapse">
+			<div class="column">
+				<a href="#" class="button btn-tab active" title="Image preview">Image preview</a>
+			</div>
+
+			<div class="column">
+				<a href="#" class="button btn-tab" title="Details & equipment">Details & equipment</a>
+			</div>
+
+			<div class="column">
+				<a href="#" class="button btn-tab" title="Dealer information">Dealer information</a>
+			</div>
+
+			<div class="column">
+				<a href="#" class="button btn-tab" title="Enquire about this car">Enquire about this car</a>
+			</div>
+
+			<div class="column">
+				<a href="#" class="button btn-tab" title="Co2 information">Co2 information</a>
+			</div>
+		</div>
+
+		<div class="tab-contents">
+			<div class="tab-frame active">
+				<!-- Keep this in our code DON'T DELETE needed for script -->
+				<div class="vehicle-gallery hide">
+					<div class="gal-imgs gal-popup">
+						<a href="http://picserver1.modix.de/userdata/1/13860/UkmWuhdkDvVDtNny/128-09-1.jpg" class="gal-item"></a>
+					</div>
+				</div>
+
+				<div class="vehicle-slide pre-slick tiles-container-5" data-max="4" data-max-scroll="4">
+					{% for model in site.data.models %}
+						<article class="column s100 m25 l-auto trim-text m33 l25">
+							<a href="#" class="trigger-xxl block">
+								<figure class="pos-relative overflow-hidden format-3x2 img-bg">
+									<img src="modix-datadir/img/3x2/3x2_1.jpg" alt="{{ site.title }} {{ model.title }} {{ model.description }}" title="{{ site.title }} {{ model.title }} {{ model.description }}" class="img-responsive h-v-center"/>
+								</figure>
+							</a>
+						</article>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="tab-frame">
+				<div class="tiles-container-5 vertical-collapse">
+					<div class="column s100 m33 l33">
+						<div class="tiles-container-10 s-space-5">
+							<div class="column block">
+								<div class="bold h4">{{ site.title }} {{ site.name }}</div>
+								<address>Road beta, <br>
+									Brooks Lane Ind Est, <br>
+									{{ site.town }} <br>
+									{{ site.country }}, {{ site.zip }}
+								</address>
+							</div>
+
+							<div class="column block">
+								<div class="h4">Simon Coghlan</div>
+								<div class="h4"><span class="" data-phone="{{ site.phone }}" title="{{ site.phone }}">{{ site.phone }}</span></div>
+							</div>
+
+							<div class="column block">
+								<a href="#" class="green bold" title="Contact us">Contact us</a>
+								<div>Viewings by appointment only</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="column s100 m66 l66">
+						<figure class="pos-relative overflow-hidden format-3x2 img-bg">
+							<img src="modix-datadir/img/3x2/3x2_1.jpg" alt="{{ site.title }} – {{ site.description }}" class="img-responsive h-v-center"/>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-frame">
+				<div class="tiles-container-5 vertical-collapse">
+					<div class="column block">
+						<ul class="equipment unstyle tiles-container-3">
+							{% for value in site.data.equipment %}
+								<li class="column s100 m50 l33">{{ value.value }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-frame">
+				<div class="tiles-container-5 vertical-collapse">
+					<div class="column block">
+						<div class="h3 light uppercase">Enquire about this car</div>
+					</div>
+
+					<div class="column block">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dolorem quod nemo deserunt perferendis beatae aperiam quidem pariatur similique. Accusamus repellat tempore assumenda dolores libero, numquam consequatur, officia obcaecati vel.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-frame">
+				<div class="tiles-container-5 vertical-collapse">
+					<div class="column block">
+						<div class="h3 light uppercase">Co2 informatio</div>
+					</div>
+
+					<div class="column block">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime dolorem quod nemo deserunt perferendis beatae aperiam quidem pariatur similique. Accusamus repellat tempore assumenda dolores libero, numquam consequatur, officia obcaecati vel.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

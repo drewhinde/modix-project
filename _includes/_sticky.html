@@ -1,0 +1,117 @@
+{% if page.title == "Vehicle-Overview" %}
+
+	<section class="container-full pos-relative mdx-sticky sticky">
+		<div class="container">
+			<div class="tiles-container-15 s-space-5 m-space-10 vertical-collapse">
+				<div class="column s100 m66 l75">
+					<div class="tiles-container-10 s-space-5">
+						<div class="column s100 m100 l100">
+							<div class="size-m">{{ site.title }} approved used cars</div>
+						</div>
+
+						<div class="column s100 m33 l33">
+							<a href="#" class="greyed" title="{{ site.title }} Model Overview">
+								<div class="tiles-container-3">
+									<div class="column s-hide m100 l100">
+										<figure class="responsive format-3x2 img-bg">
+											<img src="modix-datadir/img/3x2/placeholder-3x2_01.jpg" alt="Placeholder" class="img-responsive h-v-center"/>
+										</figure>
+									</div>
+
+									<div class="column s100 m100 l100">
+										<div>{{ site.title }} Model Overview <span class="volvo-icons-pointer-right size-xs"></span></div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="column s100 m33 l33">
+							<a href="#" class="greyed" title="Search inventory">
+								<div class="tiles-container-3">
+									<div class="column s-hide m100 l100">
+										<figure class="responsive format-3x2 img-bg">
+											<img src="modix-datadir/img/3x2/placeholder-3x2_04.jpg" alt="Placeholder" class="img-responsive h-v-center"/>
+										</figure>
+									</div>
+
+									<div class="column s100 m100 l100">
+										<div>Search inventory <span class="volvo-icons-pointer-right size-xs"></span></div>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="column s100 m33 l33">
+							<a href="#" class="greyed" title="{{ site.title }} Select">
+								<div class="tiles-container-3">
+									<div class="column s-hide m100 l100">
+										<figure class="responsive format-3x2 img-bg">
+											<img src="modix-datadir/img/3x2/placeholder-3x2_05.jpg" alt="Placeholder" class="img-responsive h-v-center"/>
+										</figure>
+									</div>
+
+									<div class="column s100 m100 l100">
+										<div>{{ site.title }} Select <span class="volvo-icons-pointer-right size-xs"></span></div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="column s100 m33 l25">
+					<div class="tiles-container-10 s-space-5">
+						<div class="column s100 m100 l100">
+							<div class="size-m">Explore</div>
+						</div>
+
+						<div class="column s100 m100 l100">
+							<ul class="unstyle tiles-container-5">
+								<li class="column block"><a href="#" class="greyed" title="Featured vehicles">Featured vehicles <span class="volvo-icons-pointer-right size-xs"></span></a></li>
+								<li class="column block"><a href="#" class="greyed" title="Business & Fleet">Business & Fleet <span class="volvo-icons-pointer-right size-xs"></span></a></li>
+								<li class="column block"><a href="#" class="greyed" title="Owner Reviews">Owner Reviews <span class="volvo-icons-pointer-right size-xs"></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% elsif page.sticky == true %}
+
+	<nav class="mdx-sticky sticky">
+		<div class="container">
+			<div class="tiles-container-15 s-space-5 m-space-10 vertical-collapse s-text-center">
+				<div class="column s100 m100 l100">
+					<div class="tiles-container-5 vertical-collapse">
+					{% for sticky in site.data.sticky | offset:6 %}
+						<div class="column s100 m-auto l25">
+							<a href="#" class="sticky-link inline-block{% if sticky.active == true %} active{% endif %}">{{ sticky.title }}</a>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+{% else %}
+
+	<nav class="mdx-sticky sticky">
+		<div class="container">
+			<div class="tiles-container-15 s-space-5 m-space-10 vertical-collapse s-text-center">
+				<div class="column s100 m100 l100">
+					<div class="tiles-container-5 vertical-collapse">
+					{% for sticky in site.data.sticky | limit:6 %}
+						<div class="column s100 m-auto l16">
+							<a href="#" class="sticky-link inline-block{% if sticky.active == true %} active{% endif %}">{{ sticky.title }}</a>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+{% endif %}

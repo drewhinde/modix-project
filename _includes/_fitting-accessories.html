@@ -1,0 +1,55 @@
+<section class="container-full pos-relative">
+	<div class="container">
+		<div class="tiles-container-15">
+			<div class="column s100 m100 l100">
+				<div class="tiles-container-3">
+					<div class="column s100 m100 l100">
+						<div class="h4">Lorem ipsum dolor sit amet.</div>
+					</div>
+
+					<div class="column s100 m50 l50">
+						<p>Praesentium repellendus nemo, quo ab qui? Voluptate, nemo debitis, non minima necessitatibus dolores quae! Voluptatibus blanditiis, excepturi, ut velit reiciendis saepe quos praesentium repellendus nemo, quo ab qui? Voluptate, nemo debitis, non minima necessitatibus dolores quae!</p>
+						<p>Tenetur natus voluptatum necessitatibus, omnis voluptate aspernatur architecto. Nemo suscipit impedit, commodi, totam culpa provident. Dolore dicta quisquam dolores neque nam modi!</p>
+					</div>
+
+					<div class="column s100 m50 l50">
+						<p>Tenetur natus voluptatum necessitatibus, omnis voluptate aspernatur architecto. Nemo suscipit impedit, commodi, totam culpa provident. Dolore dicta quisquam dolores neque nam modi!</p>
+						<p>Praesentium repellendus nemo, quo ab qui? Voluptate, nemo debitis, non minima necessitatibus dolores quae! Voluptatibus blanditiis, excepturi, ut velit reiciendis saepe quos praesentium repellendus nemo, quo ab qui? Voluptate, nemo debitis, non minima necessitatibus dolores quae!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="column s100 m100 l100">
+				<div class="h3 text-center">Fitting accessories</div>
+			</div>
+
+			<div class="column s100 m100 l100">
+
+			{% for fitting in site.data.fitting %}
+				<div class="inline-block s100 ms50 m50 lm25 l25">
+					{% for img in fitting.img %}
+					<div class="inline-block s100 m100 l100">
+						{% if fitting.cover == true %}
+							<figure class="responsive format-3x4 img-bg fitting-container">
+								<img src="modix-datadir/img/3x4/placeholder-3x4_{{ img.item }}.jpg" alt="{{ site.title }} {{ img.text }}" class="img-responsive h-v-center"/>
+								<figcaption class="fitting">
+									{{ img.text }}
+								</figcaption>
+							</figure>
+						{% else %}
+							<figure class="responsive format-3x2 img-bg fitting-container">
+								<img src="modix-datadir/img/3x2/placeholder-3x2_{{ img.item }}.jpg" alt="{{ site.title }} {{ img.text }}" class="img-responsive h-v-center"/>
+								<figcaption class="fitting">
+									{{ img.text }}
+								</figcaption>
+							</figure>
+						{% endif %}
+					</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,43 @@
+<div id="result-tools-bottom">
+	<ul class="unstyle tiles-container-15 text-center">
+		<li class="column vertical-middle">
+			<a href="#" class="muted disabled h3"><span class="{{ site.title | downcase }}-icons-arrow-double-left"></span></a>
+		</li>
+
+		<li class="column vertical-middle">
+			<a href="#" class="muted disabled h3"><span class="{{ site.title | downcase }}-icons-arrow-left"></span></a>
+		</li>
+
+		{% for pagination in site.data.pagination | limit:4 %}
+			<li class="column vertical-middle">
+				<a href="#" class="h4 light{% if pagination.active == true %} active{% else %} muted{% endif %}">{{ pagination.title }}</a>
+			</li>
+		{% endfor %}
+
+		<li class="column vertical-middle">
+			<a href="#" class="muted h3"><span class="{{ site.title | downcase }}-icons-arrow-right"></span></a>
+		</li>
+
+		<li class="column vertical-middle">
+			<a href="#" class="muted h3"><span class="{{ site.title | downcase }}-icons-arrow-double-right"></span></a>
+		</li>
+	</ul>
+</div>
+
+<div id="result-tools-bottom">
+	<ul class="unstyle tiles-container-15 text-center">
+		<li class="column vertical-middle s16">
+			<a href="#" class="muted disabled h3"><span class="{{ site.title | downcase }}-icons-arrow-left"></span></a>
+		</li>
+
+		{% for pagination in site.data.pagination | limit:4 %}
+			<li class="column vertical-middle s16">
+				<a href="#" class="h4 light{% if pagination.active == true %} active{% else %} muted{% endif %}">{{ pagination.title }}</a>
+			</li>
+		{% endfor %}
+
+		<li class="column vertical-middle s16">
+			<a href="#" class="muted h3"><span class="{{ site.title | downcase }}-icons-arrow-right"></span></a>
+		</li>
+	</ul>
+</div>

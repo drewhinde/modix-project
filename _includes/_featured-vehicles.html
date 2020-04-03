@@ -1,0 +1,52 @@
+<section class="container-full">
+	<div class="container">
+		<div class="dynamic-vertical-padding-60-30">
+			<div class="tiles-container-10">
+				<div class="column block text-center">
+					<h2 class="h1 light uppercase">Featured vehicles</h2>
+				</div>
+
+				<div class="column block m-hide l-hide">
+					<select>
+						<option value="">Select location</option>
+						{% for tab in site.data.tabs-location %}
+							<option value="{{ tab.title }}">{{ tab.title }}</option>
+						{% endfor %}
+					</select>
+				</div>
+
+				<div class="column block">
+					<div class="content-tab-parent">
+						<div class="btn-tab-navi tiles-container-5 text-center s-hide">
+							<div class="column">
+								<a href="#" class="button btn-tab active" title="My Favorites">My Favorites: <span class="count">5</span></a>
+							</div>
+
+							<div class="column">
+								<a href="#" class="button btn-tab" title="Top offers">Top offers</a>
+							</div>
+						</div>
+
+						<div class="tab-contents">
+							<div class="tab-frame">
+								<div class="mdx-result-list grid tiles-container-15 s-space-10 vertical-collapse vehicle-slide pre-slick s-show ms-show" data-max="3" data-max-scroll="3">
+									{% for model in site.data.models %}
+										{% include _grid-item.html %}
+									{% endfor %}
+								</div>
+							</div>
+
+							<div class="tab-frame">
+								<div class="tiles-container-15 vertical-collapse">
+									<div class="column block">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo eligendi sequi velit, architecto labore! Saepe alias amet sunt, tempora, culpa omnis eos dignissimos doloribus aliquid possimus vitae officiis illum aperiam.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,190 @@
+<form id="search" class="mdx-search-form mdx-form-zip-autosuggestion mdx-mail-form">
+	<div id="search-fields" class="tiles-container-15 m-space-10 s-space-5 vertical-collapse">
+		{% for select in site.data.form-select | limit:3 %}
+			<div class="column s100 m50 l33">
+				<div class="tiles-container-3">
+					<div class="column block">
+						<label class="label">{{ select.label }}</label>
+					</div>
+
+					<div class="column block">
+						<select>
+							<option value="" selected="selected">{{ select.label }}</option>
+							<option value="">{{ site.title }}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+
+		{% for rangeslider in site.data.form-rangeslider | limit:3 %}
+			<div class="column s100 m50 l33">
+				<div class="tiles-container-10 vertical-collapse">
+					<div class="column block">
+						<label class="label">{{ rangeslider.label }}</label>
+					</div>
+				</div>
+
+				<input type="hidden" name="{{ rangeslider.label | downcase | url_encode }}-from" value="" class="inputFrom">
+				<input type="hidden" name="{{ rangeslider.label | downcase | url_encode }}-to" value="" class="inputTo">
+				<div class="slider"
+					data-settings="{
+					'range': {
+						'min': {{ rangeslider.min }},
+						'max': {{ rangeslider.max }}
+					},
+					'start': [
+						{{ rangeslider.start }},
+						{{ rangeslider.stop }}
+					],
+					'step':
+						{{ rangeslider.step }}
+					}"
+					data-format="[
+						{ 'prefix' : '',
+						'postfix': ' {{ rangeslider.unit }}',
+						'emptifyMin' : 'all',
+						'decimalSep' : '.',
+						'groupSep' : '{{ rangeslider.group }}' },
+						{ 'prefix' : '{{ rangeslider.prefix }} ',
+						'postfix': ' {{ rangeslider.unit }}',
+						'emptifyMax' : 'all',
+						'decimalSep' : '.',
+						'groupSep' : '{{ rangeslider.group }}' }
+					]">
+				</div>
+
+				<div class="tiles-container-10 vertical-collapse">
+					<div class="column s50 m50 l50">
+						<span class="bold from"></span>
+					</div>
+
+					<div class="column s50 m50 l50 text-right">
+						<span class="bold to"></span>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div id="search-extras" class="adv-search tiles-container-15 m-space-10 s-space-5 vertical-collapse">
+		<div class="column block">
+			<div class="tiles-container-3">
+				<div class="column block">
+					<label class="label">Fuel type</label>
+				</div>
+
+				<div class="column block">
+					<div class="tiles-container-5">
+						{% for checkbox in site.data.form-checkbox | limit:4 %}
+							<div class="column s50 m25 l16">
+								<label for="extras_{{ checkbox.label | downcase | url_encode }}">
+									<input type="checkbox" name="extras_{{ checkbox.label | downcase | url_encode }}" id="extras_{{ checkbox.label | downcase | url_encode }}" value="1" {% if checkbox.checked == true %} checked=""{% endif %} {% if checkbox.disabled == true %} disabled=""{% endif %}>
+									<span class="mark"></span><span class="label">{{ checkbox.label }}</span>
+								</label>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column block">
+			<div class="tiles-container-3">
+				<div class="column block">
+					<label class="label">Transmission</label>
+				</div>
+
+				<div class="column block">
+					<div class="tiles-container-5">
+						{% for checkbox in site.data.form-checkbox | limit:2 | offset:4 %}
+							<div class="column s50 m25 l16">
+								<label for="extras_{{ checkbox.label | downcase | url_encode }}">
+									<input type="checkbox" name="extras_{{ checkbox.label | downcase | url_encode }}" id="extras_{{ checkbox.label | downcase | url_encode }}" value="1" {% if checkbox.checked == true %} checked=""{% endif %} {% if checkbox.disabled == true %} disabled=""{% endif %}>
+									<span class="mark"></span><span class="label">{{ checkbox.label }}</span>
+								</label>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column block">
+			<div class="tiles-container-3">
+				<div class="column block">
+					<label class="label">Color</label>
+				</div>
+
+				<div class="column block">
+					<div class="tiles-container-5">
+						{% for checkbox in site.data.form-checkbox | limit:15 | offset:6 %}
+							<div class="column s50 m25 l16">
+								<label for="extras_{{ checkbox.label | downcase | url_encode }}">
+									<input type="checkbox" name="extras_{{ checkbox.label | downcase | url_encode }}" id="extras_{{ checkbox.label | downcase | url_encode }}" value="1" {% if checkbox.checked == true %} checked=""{% endif %} {% if checkbox.disabled == true %} disabled=""{% endif %}>
+									<span class="mark"></span><span class="label">{{ checkbox.label }}</span>
+								</label>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="column block">
+			<div class="tiles-container-3">
+				<div class="column block">
+					<label class="label">Options</label>
+				</div>
+
+				<div class="column block">
+					<div class="tiles-container-5">
+						{% for checkbox in site.data.form-checkbox | limit:15 | offset:21 %}
+							<div class="column s50 m25 l16">
+								<label for="extras_{{ checkbox.label | downcase | url_encode }}">
+									<input type="checkbox" name="extras_{{ checkbox.label | downcase | url_encode }}" id="extras_{{ checkbox.label | downcase | url_encode }}" value="1" {% if checkbox.checked == true %} checked=""{% endif %} {% if checkbox.disabled == true %} disabled=""{% endif %}>
+									<span class="mark"></span><span class="label">{{ checkbox.label }}</span>
+								</label>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<div id="search-buttons" class="tiles-container-15 m-space-10 s-space-5 vertical-collapse">
+		<div class="column s100 m100 l50">
+			<div class="tiles-container-15 m-space-10 s-space-5">
+				<div class="column s100 ms100 m33">
+					<button type="reset" class="button btn-icon"><span class="{{ site.title | downcase }}-icons-cross"></span> Reset search</button>
+				</div>
+
+				<div class="column s100 ms100 m33">
+					<button type="reset" class="button btn-icon"><span class="{{ site.title | downcase }}-icons-bell"></span> Create search alert</button>
+				</div>
+
+				<div class="column s100 ms100 m33">
+					<a href="#" class="mdx-save-search-new button btn-icon"><span class="{{ site.title | downcase }}-icons-save"></span> Save search</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="column s100 m100 l50 m-text-right l-text-right">
+			<div class="tiles-container-15 m-space-10 s-space-5">
+				<div class="column s100 ms100 m33">
+					<div class="adv-search-trigger">
+						<a href="#" class="change-search simple button btn-secondary">Quick search</a>
+						<a href="#" class="change-search adv button btn-secondary">Advanced search</a>
+					</div>
+				</div>
+
+				<div class="column s100 ms100 m33">
+					<button type="submit" class="mdx-gtm-srp-view-results button btn-primary">View <span class="vehicles-found">35</span> results</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,132 @@
+		<footer id="footer">
+			<section id="footer-links" class="container-full">
+				<div class="dynamic-vertical-padding-60-30">
+					<div class="container container-padding-only">
+						{% for links in site.data.footer-links limit:1 %}
+							<div class="mdx-mobile-toggle-parent">
+								<div class="tiles-container-10">
+									<div class="column block s-text-center">
+										<h4 class="h4 regular uppercase">{{ site.title }} {{ links.header }}</h4>
+									</div>
+
+									<div class="column s100 m100 l100 mdx-mobile-toggle-click m-hide l-hide regular muted uppercase small s-text-center m-text-center l-text-right">
+										<span class="toggler-true">Show</span>
+										<span class="toggler-false">Hide</span>
+										models
+									</div>
+
+									<div class="column s100 m100 l100 mdx-mobile-toggle m-show l-show">
+										<ul class="unstyle m-text-column-2 l-text-column-3 tiles-container-5">
+											{% for anchor in links.anchor %}
+												<li class="column block">
+													<a href="#" class="h6 regular uppercase" title="{{ anchor.link }}">{{ anchor.link }}</a>
+												</li>
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+
+			{% if page.type == "dws" %}
+				<section id="footer-dws" class="container-full pos-relative">
+					<div class="container container-padding-only">
+						<div class="dynamic-vertical-padding-60-30">
+							<div class="tiles-container-15">
+								<div class="column block">
+									<p>The values given were calculated using the prescribed measurement method (§ 2 No. 5, 6 , 6 a car EnVKV in the currently applicable version ). The figures do not refer to an individual vehicle and are not part of the offer but are purely for comparison purposes between the various types of vehicles. For more current information on the individual vehicles can be obtained from your Bentley dealer. Consumption figures were obtained on the basis of standard equipment. Special equipment may affect consumption and performance. The Fuel Consumption and CO2 emissions of a vehicle not only depend on the efficient utilization of the fuel by the vehicle, but are also influenced by driving style and other non-technical factors. CO2 is the main greenhouse gas responsible for global warming.</p>
+
+									<p>Further information on official Fuel Consumption and the official specific CO2 emissions of new passenger cars can be found in the " guide on fuel economy and CO2 emissions of new passenger cars ", which is available free of charge at all sales outlets and at DAT.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			{% else %}
+				<section id="footer-social" class="container-full">
+					<div class="dynamic-vertical-padding-60-30">
+						<div class="container container-padding-only">
+							<div class="tiles-container-15">
+								<div class="column s100 m50 l33">
+									<div class="tiles-container-10">
+										<div class="column block">
+											<h4 class="h4 regular uppercase">Locate dealer</h4>
+										</div>
+
+										<div class="column block">
+											<div class="l90">
+												<select>
+													<option value="">Please select a region</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="column s100 m50 l66">
+									{% for social-media in site.data.social-media %}
+										<div class="tiles-container-10">
+											<div class="column block">
+												<h4 class="h4 regular uppercase">{{ social-media.header }}</h4>
+											</div>
+
+											<div class="column block">
+												<ul class="unstyle tiles-container-15">
+													{% for anchor in social-media.anchor %}
+														<li class="column l20">
+															<a href="#" class="h1 social" title="{{ social-media.header }} {{ anchor.link }}">
+																<span class="{{ site.title | downcase }}-icons-{{ anchor.link | downcase }}"></span>
+															</a>
+														</li>
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			{% endif %}
+
+			<section id="footer-legal" class="container-full">
+				<div class="dynamic-vertical-padding-60-30">
+					<div class="container container-padding-only">
+						<div class="tiles-container-10">
+							<div class="column block">
+								{% for legal in site.data.footer-legal limit:1 %}
+									<ul class="unstyle tiles-container-10 s-space-5">
+										{% for anchor in legal.anchor %}
+											<li class="column s100">
+												<a href="#" class="regular uppercase" title="{{ anchor.link }}">{{ anchor.link }}</a>
+											</li>
+										{% endfor %}
+									</ul>
+								{% endfor %}
+							</div>
+
+							<div class="column block">
+								<p class="muted bold">© Copyright Bentley Motors 2017</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</footer>
+
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/jquery/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/modix.js"></script>
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/xhr/http_request.js"></script>
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/xhr/searchform_v3.js"></script>
+		<script type="text/javascript" src="http://lc25979.x.modix.de/userdata/11111/layout/slick/slick-v1.5.9.js"></script>
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/nouislider/nouislider-v8.js"></script>
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/hws-2015-responsive/searchform-v3.js"></script>
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/hws-2015-responsive/main.js"></script>
+		<script type="text/javascript" src="http://hws.modix.de//userdata/11111/layout/hws-2015-responsive/financing.js"></script>
+		<script type="text/javascript" src="modix-datadir/js/my-scripts.js"></script>
+	</body>
+</html>

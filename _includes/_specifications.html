@@ -1,0 +1,15 @@
+<ul class="specifications tiles-container-10 s-space-5 vertical-collapse">
+	{% for spec in site.data.specifications %}
+		<li class="column s100 m100 lm50 l50">
+			<div class="columns-container-3">
+				<div class="column s50 m50 l50 bold">{{ spec.title }}</div>
+				<div class="column s50 m50 l50 vertical-top">{{ spec.value }}
+					{% if spec.label == true %}
+						<br>
+						<img src="modix-datadir/img/consumption-label/g.svg" alt="g" title="g" class="img-responsive" width="80">
+					{% endif %}
+				</div>
+			</div>
+		</li>
+	{% endfor %}
+</ul>

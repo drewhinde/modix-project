@@ -1,0 +1,62 @@
+<figure class="responsive format-8x5 format-mobile img-bg" style="background-image: url('modix-datadir/img/1x2/placeholder-1x2_04.jpg')">
+	<img src="modix-datadir/img/8x5/placeholder-8x5_01.jpg" alt="" class="img-responsive h-v-center s-hide"/>
+</figure>
+
+<div class="model-slick-container">
+	<div class="pos-relative vertical-align">
+		<div class="container">
+			<div class="tiles-container-15 vertical-collapse invert text-center">
+				<div class="column s100 m100 l100">
+					<h1 class="headline">Volvo Select Approved Used Cars</h1>
+				</div>
+
+				<div class="column s-hide m-hide l100">
+					<p class="inline-block s100 m100 l75">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, ipsa, odit. Fugiat dolor nemo voluptates, eum dolorem quaerat consequuntur rerum labore voluptas, maxime quam, animi. Molestias itaque, reprehenderit debitis omnis!</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="model-slide pre-slick custom-paging custom-paging-model">
+			{% for slide in site.data.slider-model %}
+			<div class="tiles-container-1 pos-relative text-center" data-title="{{ slide.custom-paging }} <br>{{ slide.custom-paging-model-count }} models">
+				<div class="column s100 m100 l100">
+					<a href="#" class="btn-model-container">
+						<figure class="format-4x3">
+							<img src="" data-lazy="modix-datadir/img/model/model_{{ slide.img }}.png" class="img-responsive h-v-center" alt="Volvo {{ slide.title }}">
+						</figure>
+						<div class="btn-model-hover">Explore the model</div>
+					</a>
+				</div>
+
+				<div class="column s100 m100 l100">
+					<div class="h1 bold invert">{{ slide.title }}</div>
+				</div>
+
+				<div class="column s100 m100 l100">
+					<a href="#" class="muted underline light">View stock</a>
+				</div>
+
+				<div class="column s100 m100 l100">
+					<div class="muted bold">{{ slide.stock }}</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+		<div class="container">
+			<div class="tiles-container-15 vertical-collapse">
+				<div class="column s100 m100 l100">
+					<div class="tiles-container-5">
+						<div class="column s100 m50 l50 m-text-right l-text-right">
+							<a href="#" class="button btn-slide s100 m66 l40">Assisted search</a>
+						</div>
+
+						<div class="column s100 m50 l50">
+							<a href="#" class="button btn-slide s100 m66 l40">Advanced search</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

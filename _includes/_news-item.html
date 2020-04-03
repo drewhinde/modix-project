@@ -1,0 +1,42 @@
+<article class="column s100 m50 l25">
+	<div class="tiles-container-5">
+		<div class="column block">
+			<a href="#" class="block" title="{{ site.title }} {{ news.headline }} - {{ news.subline }}">
+				<figure class="pos-relative overflow-hidden format-16x9 img-bg">
+					<img src="modix-datadir/img/16x9/16x9_01.jpg" alt="{{ site.title }} {{ news.headline }} - {{ news.subline }}" class="img-responsive h-v-center"/>
+				</figure>
+			</a>
+		</div>
+
+		<div class="column block">
+			<div class="h4 trim-text">Vauxhall Mokka 1.6 16v VVT</div>
+			<div class="h4 trim-text">(115ps) (s/s) 2014MY</div>
+			<div class="h4 trim-text bold">£11,110</div>
+		</div>
+
+		<div class="column block">
+			<hr class="hr">
+		</div>
+
+		<div class="column block">
+			<ul class="unstyle tiles-container-3">
+				{% for equipment in site.data.equipment | limit:6 offset:2 %}
+					<li class="column s50 m50 l50 bold" title="{{ equipment.title }}">{{ equipment.value }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="column block">
+			<p>Fuel consumption (comb./town/open road): 43.5 / 32.8 / 53.3 l/100km <br>
+			CO2-Emissions comb.: 153 g/km</p>
+		</div>
+
+		<div class="column block">
+			<div class="bold green">Sales centre: 2nd Move - Intertechnic</div>
+		</div>
+
+		<div class="column block">
+			<a href="" class="button btn-primary block">Details <span class="{{ site.title | downcase }}-icons-pointer-right"></span></a>
+		</div>
+	</div>
+</article>

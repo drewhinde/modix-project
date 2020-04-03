@@ -1,0 +1,54 @@
+<form class="mdx-search-form models model-select model-search tiles-container-15">
+	<div class="column block model-category-filter">
+		<div class="text-center tiles-container-15 s-space-5">
+			{% for filter in site.data.filter %}
+				<span class="model-filter column uppercase h6{% if filter.active == true %} active{% endif %}"{% if filter.active == true %} data-active="1"{% endif %} data-filter="{{ filter.title | downcase }}"><span class="{{ site.title | downcase }}-icons-{{ filter.icon }} block btn-filter"></span> {{ filter.title }}</span>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="column block models-filtered-area">
+		<div class="models-content tiles-container-15">
+		{% for models in site.data.models %}
+			<div class="model-item column s50 m33 l25">
+				<div class="model-data">
+					<input type="checkbox" name="_model" id="model_{{ models.id }}" value="{{ models.id }}">
+					<label for="model_{{ models.id }}" class="tiles-container-3 text-center">
+						<span class="column s100 m75 l100">
+							<span class="pos-relative overflow-hidden format-2x1">
+								<img src="modix-datadir/img/2x1/{{ models.img | downcase }}.png" alt="{{ site.title }} {{ models.title }}" class="img-responsive h-v-center"/>
+							</span>
+						</span>
+
+						<span class="column block text-left">
+							<span class="model-title pos-relative h4">{{ models.title }}</span>
+						</span>
+
+						<span class="column block text-left">
+							<span>from £{{ models.price }}</span>
+						</span>
+					</label>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+
+	<div class="column block model-search-buttons">
+		<div class="tiles-container-5 m-text-right l-text-right">
+			<div class="column s100 m20 l20">
+				<button type="reset" class="button btn-primary block s100 m100 l100 text-left">Reset <span class="{{ site.title | downcase }}-icons-pointer-right"></span></button>
+			</div>
+
+			<div class="column s100 m20 l20">
+				<a href="#" class="mdx-save-search-new button btn-primary block s100 m100 l100 text-left">Save search <span class="{{ site.title | downcase }}-icons-pointer-right"></span></a>
+			</div>
+
+			<div class="column s100 m20 l20">
+				<button type="submit" class="mdx-gtm-srp-view-results button btn-primary mdx-match-plural block s100 m100 l100 text-left"> <span class="vehicles-found"></span> Vehicles found <span class="{{ site.title | downcase }}-icons-pointer-right"></span></button>
+
+				<button type="submit" class="mdx-gtm-srp-view-results button btn-primary mdx-match-singular hide block s100 m100 l100 text-left"> <span class="vehicles-found"></span> Vehicle found <span class="{{ site.title | downcase }}-icons-pointer-right"></span></button>
+			</div>
+		</div>
+	</div>
+</form>

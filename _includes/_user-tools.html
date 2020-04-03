@@ -1,0 +1,55 @@
+<section id="user-tools" class="container-full s-hide m-hide lm-show pos-relative{% if page.title == "VDP" %} bg{% endif %}">
+	<div class="container container-padding-only">
+		<div class="tiles-container-2 vertical-collapse">
+			<div class="column s50 m33 l50 vertical-middle">
+				<div class="tiles-container-10 s-space-5 vertical-collapse">
+					<div class="column">
+						<a href="#" class="uppercase light underline underline-link">{{ site.title}} Pre-Owned Benefits <span class="{{ site.title | downcase }}-icons-right small"></span></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="column s50 m66 l50 text-right vertical-middle">
+				<div class="tiles-container-10 s-space-5 vertical-collapse">
+					{% for tool in site.data.user-tools %}
+						<div class="column">
+							<a href="#" title="{{ tool.title }}" data-visible="1" data-link="#" class="underline uppercase light bp-{{ tool.class }}">{{ tool.title }}: <span class="{{ tool.class }}-count">{{ tool.count }}</span></a>
+						</div>
+					{% endfor %}
+
+					<div class="column">
+						<ul class="main-navi desktop-navi s-hide m-hide lm-show l-show unstyle block">
+							{% for nav in site.data.navi | limit:1 | offset:2 %}
+								<li class="navi-item{% if nav.active == true %} active{% endif %}{% if nav.right == true %} navi-item-secondary{% endif %}{% if nav.last == true %} last{% endif %}">
+									<a href="#" class="user-tools-link uppercase light underline" title="{{ nav.title }}">
+										{{ nav.title }}: english
+									</a>
+
+									{% if nav.sub != %}
+										<span class="sbm-opener user-tools-opener"></span>
+
+										<ul class="user-tools-dropdown submenu sub-lv2 unstyle text-left">
+											{% for sub in nav.sub %}
+												<li class="submenu-item {% if sub.active == true %}active{% endif %}">
+													{% if nav.language == true %}
+														<a href="#" class="uppercase light" title="{{ sub.title }}">
+															<span class="flag-icon flag-icon-{{ sub.class }}"></span>
+															<span class="flag-title">{{ sub.title }}</span>
+														</a>
+
+													{% else %}
+														<a href="#" class="uppercase light" title="{{ sub.title }}">{{ sub.title }}</a>
+													{% endif %}
+												</li>
+											{% endfor %}
+										</ul>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

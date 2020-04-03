@@ -1,0 +1,60 @@
+<div class="content-tab-parent">
+	<div class="btn-tab-navi s-hide tiles-container-5 text-center">
+		{% for tab in site.data.tabs-location %}
+			<div class="column">
+				<a href="#" class="btn-tab{% if tab.active == true %} active{% endif %} light uppercase" title="{{ tab.title }}">{{ tab.title }}</a>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="tab-contents">
+		{% for tab in site.data.tabs-location %}
+			<div class="tab-frame{% if tab.active == true %} active{% endif %}">
+				<div class="tiles-container-15 s-space-10">
+					<div class="column block pos-relative">
+						<div class="toggler toggler-btn open regular muted uppercase small s-text-center m-text-center l-text-right s-hide">
+							<span class="toggler-true">Show</span>
+							<span class="toggler-false">Hide</span>
+							countries
+						</div>
+
+						<div class="toggle-content">
+							<div class="tiles-container-15 vertical-collapse">
+								<div class="column block">
+									<div class="tiles-container-5 vertical-collapse">
+										{% for content in tab.content %}
+											<div class="column s50 m33 l25">
+												<label for="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}">
+													<input type="checkbox" name="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" id="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" {% if content.checked == true %} checked=""{% endif %} {% if content.disabled == true %} disabled=""{% endif %}>
+													<span class="mark"></span><span class="label">{{ content.label }}</span>
+												</label>
+											</div>
+										{% endfor %}
+
+										<div class="column block">
+											<div class="tiles-container-15 s-space-5 m-space-10 vertical-collapse">
+												<div class="column s100 ms33">
+													<button class="button btn-icon"><span class="bentley-icons-tick"></span> Select all</button>
+												</div>
+
+												<div class="column s100 ms33">
+													<button class="button btn-icon"><span class="bentley-icons-cross"></span> Deselect all</button>
+												</div>
+
+												<div class="column s100 ms33 to-left">
+													<button class="button btn-primary">Set location</button>
+												</div>
+
+												<div class="clear"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

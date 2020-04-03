@@ -1,0 +1,13 @@
+<div class="tiles-container-15">
+	<div class="column block">
+		<div class="bold block">{{ equipment.title }}</div>
+
+		<ul class="unstyle equipment equipment-highlight tiles-container-3 vertical-collapse">
+			{% for value in equipment.value %}
+				<li class="column inline-block s100 m50 l50">
+					{{ value.title }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

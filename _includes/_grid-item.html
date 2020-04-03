@@ -1,0 +1,88 @@
+<article class="vehicle column s100 m50 lm33 l33">
+	<div class="vehicle-inner">
+		<div class="content">
+			<div class="tiles-container-10 s-space-5">
+				<div class="column s33 m100 l100">
+					<a href="#" class="block pos-relative">
+						<figure class="pos-relative overflow-hidden format-3x2 img-bg">
+							<img src="modix-datadir/img/3x2/3x2_1.jpg" alt="{{ site.title }} {{ model.title }} {{ model.description }}" title="{{ site.title }} {{ model.title }} {{ model.description }}" class="img-responsive h-v-center"/>
+						</figure>
+
+						<span class="mobile-fav m-hide l-hide {{ site.title | downcase }}-icons-star"></span>
+					</a>
+				</div>
+
+				<div class="column s66 m100 l100">
+					<div class="tiles-container-3">
+						<div class="column block">
+							<a href="#" title="{{ site.title }} {{ model.title }}" class="h4 light trim-text uppercase">{{ site.title }} {{ model.title }} {{ model.description }}</a>
+							<div class="h4 light muted">EUR {{ model.price }}</div>
+						</div>
+
+						<div class="column s100 m-hide l-hide">
+							<ul class="unstyle tiles-container-3">
+								{% for equipment in site.data.equipment | limit:2 | offset:2 %}
+									<li class="column" title="{{ equipment.title }} {{ equipment.value }}">
+										{{ equipment.title }} {{ equipment.value }}
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+
+						<div class="column s100 m-hide l-hide">
+							<a href="#" class="button btn-icon btn-icon-flat" title="{{ site.title }} Düsseldorf"><span class="{{ site.title | downcase }}-icons-globe"></span> {{ site.title }} Düsseldorf</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="column block s-hide">
+					<div class="tiles-container-10 s-space-5">
+						<div class="column block">
+							<ul class="unstyle tiles-container-3">
+								{% for equipment in site.data.equipment | limit:6 offset:2 %}
+									<li class="column block" title="{{ equipment.title }} {{ equipment.value }}">
+										<span class="inline-block s50 m50 l50 bold">{{ equipment.title }}</span><span class="inline-block s50 m50 l50">{{ equipment.value }}</span>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+
+						<div class="column block">
+							<p><span class="bold">Fuel consumption in l/100 km</span><br>
+							Urban 23.4; Extra Urban 10.1; Combined 15.0;<br>
+							CO2 Emissions (combined) 342 g/km.</p>
+						</div>
+
+						<div class="column block">
+							<img src="modix-datadir/img/consumption-label/{{ model.consumption }}.svg" alt="{{ model.consumption }}" title="{{ model.consumption }}" class="img-responsive" width="80">
+						</div>
+
+						<div class="column block">
+							<a href="#" class="button btn-icon btn-icon-flat" title="{{ site.title }} Düsseldorf"><span class="{{ site.title | downcase }}-icons-globe"></span> {{ site.title }} Düsseldorf</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="column block tools s-hide">
+					<div class="tiles-container-5">
+						<div class="column block">
+							<a href="#" class="button btn-primary" title="Vehicle details">Vehicle details</a>
+						</div>
+
+						<div class="column block">
+							<a href="#" class="button btn-secondary" title="Contact dealer">Contact dealer</a>
+						</div>
+
+						<div class="column block">
+							<a href="#" class="button btn-icon btn-icon-flat" title="Compare vehicle"><span class="{{ site.title | downcase }}-icons-arrows"></span> Compare vehicle</a>
+						</div>
+
+						<div class="column block">
+							<a href="#" class="button btn-icon btn-icon-flat" title="Remove from favorites"><span class="{{ site.title | downcase }}-icons-sheets"></span> Remove from favorites</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>

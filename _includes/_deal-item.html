@@ -1,0 +1,58 @@
+<article class="column s100 m100 l100">
+	<div class="tiles-container-15 s-space-5 m-space-10">
+		<div class="column s100 m100 l100">
+			<figure class="responsive format-12x5 img-bg">
+				<img src="modix-datadir/img/12x5/placeholder-12x5_{{ deal.img }}.jpg" alt="{{ site.title }} {{ deal.headline }}" class="img-responsive h-v-center"/>
+
+				<figcaption class="figcaption{% if page.title == 'Company-Overview' %} vertical-align{% endif %}">
+					<div class="container">
+						<div class="tiles-container-3">
+							<div class="column s100 m100 l100 s-text-center">
+								<div class="h4 invert uppercase">{{ deal.slide-subline }}</div>
+							</div>
+
+							<div class="column s-hide m100 l100">
+								<div class="h1 invert">{{ deal.slide-headline }}</div>
+							</div>
+
+						{% if page.title == "Company-Overview" %}
+							<div class="column s-hide m100 l100">
+								<p class="invert inline-block s100 m100 l50">{{ deal.slide-paragraph }}</p>
+							</div>
+
+							<div class="column s100 m100 l100">
+								<a href="#" class="button btn-slide inline-block s100 m50 l25" title="More information">More information</a>
+							</div>
+						{% endif %}
+						</div>
+					</div>
+				</figcaption>
+			</figure>
+		</div>
+
+	{% if page.title != "Company-Overview" %}
+		<div class="column s100 m100 l100">
+			<div class="tiles-container-3">
+				<div class="column s100 m100 l100">
+					<div class="h4 uppercase">{{ deal.headline }}</div>
+				</div>
+
+				<div class="column s100 m100 l100">
+					<p>The only thing that is faster than a Polestar upgrade is its installation, quick and easy, that can be done during a service or a tyre change.</p>
+				</div>
+
+				<div class="column s100 m100 l100">
+					<ul class="unstyle">
+						<li class="equipment-item">Enjoy a 2 week trial of the Polestar upgrade for only £25 *</li>
+						<li class="equipment-item">Or buy the Polestar Performance Upgrade for £835 *</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="column s100 m100 l100">
+			<a href="#" class="button btn-secondary inline-block s100 m-auto l33" title="{{ deal.button }}">{{ deal.button }}</a>
+		</div>
+	{% endif %}
+	</div>
+</article>

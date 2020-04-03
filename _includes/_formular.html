@@ -1,0 +1,63 @@
+<form class="tiles-container-15 m-space-10 s-space-10">
+	<div class="column block">
+		<div class="tiles-container-3">
+			<div class="column block">
+				<div class="h4 light uppercase">{{ site.title }} Mulsanne speed</div>
+			</div>
+
+			<div class="column block">
+				<div class="h6 regular uppercase muted">{{ site.title }} Düsseldorf, VIN: SCBBN63Y1HC002805, Black Crystal, EUR 379,900, 2016</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="column block">
+		<p class="muted"><span class="highlight">*</span> Mandatory fields</p>
+	</div>
+
+	{% for form in site.data.formular %}
+		<div class="column{% if form.block == true %} block {% else %} s100 ms50 m50 lm33 l33{% endif %}">
+			<div class="tiles-container-3">
+				<div class="column block">
+					<label class="label">{{ form.label }}<span class="highlight">*</span></label>
+				</div>
+
+				<div class="column block">
+					{% if form.type == "text" %}
+						<input type="text" placeholder="{{ form.label }}" class="inline-block s100 m100 l100">
+					{% elsif form.type == "select" %}
+						<select>
+							<option value="" selected="selected">{{ form.label }}</option>
+						</select>
+					{% elsif form.type == "textarea" %}
+						<textarea cols="30" rows="6" class="inline-block l100 m100 s100" placeholder="{{ form.placeholder }}"></textarea>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+	<div class="column block">
+		<div class="tiles-container-10 s-space-5">
+			<div class="column s100 m66 lm40 l33 vertical-middle">
+				<label for="checkbox-01">
+					<input type="checkbox" name="checkbox-01" id="checkbox-01">
+					<span class="mark"></span><span class="label">Accept <a href="#" class="underline underline-link" title="Terms & Conditions">Terms & Conditions</a> of Bentley</span>
+				</label>
+			</div>
+
+			<div class="column s100 m33 lm30 l33 vertical-middle">
+				<label for="checkbox-02">
+					<input type="checkbox" name="checkbox-02" id="checkbox-02">
+					<span class="mark"></span><span class="label">Keep me informed</span>
+				</label>
+			</div>
+
+			<div class="column s100 m-auto lm30 l33 m-text-right l-text-right vertical-middle">
+				<a href="#" class="button btn-primary" title="Send enquiry">Send enquiry</a>
+			</div>
+		</div>
+	</div>
+</form>
+
+

@@ -1,0 +1,33 @@
+<div id="animation" class="pos-relative">
+	<div class="anim-inner">
+		<div class="anim-slick pre-slick">
+
+			{% assign i = 0 %}
+			{% for slide in site.data.slider %}
+			{% assign i = i | plus:1 %}
+				<article class="anim-slide pos-relative">
+					<div class="anim-info anim-info-{{ slide.align }}">
+						<div class="padding">
+							<div class="tiles-container-15">
+								<div class="column block">
+									<div class="tiles-container-3">
+										<div class="column block">
+											<div class="h2 light uppercase">Bentley Pre-owned</div>
+										</div>
+										<div class="column block">
+											<div class="h5 light uppercase">It is about the design, performance and craftsmanship of every car.</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<figure class="format-2x1 img-bg pos-relative">
+						<img src="" data-lazy="modix-datadir/img/2x1/slide-{{ i }}.jpg" class="img-responsive h-v-center" alt="{{ site.title }} – {{ site.description }}">
+					</figure>
+				</article>
+			{% endfor %}
+		</div>
+	</div>
+</div>

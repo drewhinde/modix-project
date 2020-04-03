@@ -1,0 +1,81 @@
+<div class="tiles-container-15 vertical-collapse filter-models">
+	{% for filter in site.data.tabs-models-filter %}
+		<div class="column block">
+			<div class="filter-models-section">
+				<div class="toggler open">
+					<div class="tiles-container-5 vertical-collapse">
+						<div class="column s100 m50 l50">
+							{% for content in filter.content %}
+								{% if content.huge == true %}
+									<label class="label-view-stock" for="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}">
+										<input type="checkbox" name="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" id="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" {% if content.checked == true %} checked=""{% endif %} {% if content.disabled == true %} disabled=""{% endif %}>
+
+										<span class="mark"></span><span class="label{% if content.huge == true %} label-huge{% endif %}"><span class="h4">{{ content.label }}</span> <br>View Stock ({{ content.count }})</span>
+									</label>
+								{% endif %}
+							{% endfor %}
+						</div>
+
+						<div class="column s100 m50 l50">
+							<div class="toggler-btn regular muted uppercase small s-text-center m-text-right l-text-right">
+								<span class="toggler-true">Show</span>
+								<span class="toggler-false">Hide</span>
+								models
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="toggle-content">
+					<div class="tiles-container-15 vertical-collapse">
+						<div class="column s100 m50 l33">
+							{% for content in filter.content %}
+								{% if content.huge == true %}
+									<label class="warranty-container" for="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}">
+										<input type="checkbox" name="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" id="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" {% if content.checked == true %} checked=""{% endif %} {% if content.disabled == true %} disabled=""{% endif %}>
+
+										<span class="warranty-popup">The more agile <span class="bold">{{ content.label }}</span> has luxury and performance at its heart. It brings an enhanced sporting edge to the already dynamically agile Flying Spur range.</span>
+
+										<span class="pos-relative overflow-hidden format-2x1">
+											<img src="modix-datadir/img/model/{{ content.img }}.png" alt="{{ site.title }} – {{ site.description }}" class="img-responsive h-v-center"/>
+										</span>
+
+										<span class="mark"></span><span class="label{% if content.huge == true %} label-huge{% endif %}"><span class="h4">{{ content.label }}</span> <br>View Stock ({{ content.count }})</span>
+									</label>
+								{% endif %}
+							{% endfor %}
+						</div>
+
+						<div class="column s100 m50 l66">
+							<div class="tiles-container-10 label-align">
+								{% for content in filter.content %}
+									{% if content.huge != true %}
+										<div class="column s100 m50 l33">
+											<label class="warranty-container" for="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}">
+												<input type="checkbox" name="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" id="{{ tab.title | downcase | url_encode }}_{{ content.label | downcase | url_encode }}" {% if content.checked == true %} checked=""{% endif %} {% if content.disabled == true %} disabled=""{% endif %}>
+
+												<span class="warranty-popup">The more agile <span class="bold">{{ content.label }}</span> has luxury and performance at its heart. It brings an enhanced sporting edge to the already dynamically agile Flying Spur range.</span>
+
+												<span class="pos-relative overflow-hidden format-2x1">
+													<img src="modix-datadir/img/model/{{ content.img }}.png" alt="{{ site.title }} – {{ site.description }}" class="img-responsive h-v-center"/>
+												</span>
+												<span class="mark"></span><span class="label">{{ content.label }} ({{ content.count }})</span>
+											</label>
+										</div>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+	<div class="column">
+		<label class="label-view-stock" for="other-models">
+			<input type="checkbox" name="other-models" id="other-models">
+			<span class="mark"></span><span class="label label-huge"><span class="h4">Other models</span> <br>View Stock (2)</span>
+		</label>
+	</div>
+</div>

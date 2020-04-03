@@ -1,0 +1,21 @@
+<div class="column s100 m50 l25 cart pos-relative">
+	<a href="#" title="{{ model.title }}">
+		<div class="cart-price invert h4">{{ model.price }}&nbsp;€</div>
+
+		<figure class="responsive format-4x3 img-bg">
+			<img src="modix-datadir/img/{{ model.img }}.jpg" alt="" class="img-responsive h-v-center"/>
+
+			<figcaption class="figcaption invert">
+				<div class="tiles-container-3">
+					<div class="column s100 m100 l100">
+						<div class="uppercase bold">{{ model.title }}</div>
+					</div>
+
+					<div class="column s100 m100 l100">
+						<p>À <span class="bold color-orange">{{ model.count }}7km</span> de chez vous</p>
+					</div>
+				</div>
+			</figcaption>
+		</figure>
+	</a>
+</div>

@@ -1,0 +1,34 @@
+<div class="tiles-container-10 mdx-search-criteria text-center">
+	<div class="column block">
+		<div class="h3 light uppercase">My search criteria</div>
+	</div>
+
+	<div class="column block s-text-left">
+		<div class="tiles-container-5">
+			{% for tag in site.data.tags %}
+				<div class="column s100">
+					<a href="#" title="Remove {{ tag.title }}" class="button btn-tab btn-criteria criteria-{{ tag.title | downcase }}" data-title="{{ tag.title }}">
+						<span class="criteria-remove {{ site.title | downcase }}-icons-cross"></span>
+						<span class="criteria-value">
+							{% if tag.from %}
+								<span class="value-from" data-from="">{{ tag.from }}</span>
+							{% endif %}
+
+							{% if tag.to %}
+								<span class="value-to" data-to="–">{{ tag.to }}</span>
+							{% endif %}
+
+							{% if tag.value %}
+								<span class="multi-value">{{ tag.value }}</span>
+							{% endif %}
+						</span>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="column s100">
+		<a href="#" class="button btn-secondary" title="Refine search">Refine search</a>
+	</div>
+</div>

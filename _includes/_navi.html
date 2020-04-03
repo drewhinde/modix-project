@@ -1,0 +1,143 @@
+<nav>
+	<ul class="main-navi mobile-navi lm-hide l-hide unstyle">
+		<li class="nav-button">
+			<button class="hamburger" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+		</li>
+	</ul>
+
+	<ul class="main-navi desktop-navi s-hide m-hide lm-show l-show unstyle block">
+		{% if page.title == "Group" %}
+			<li class="navi-item">
+				<a href="#" class="uppercase font-regular" title="{{ site.title }} group name">{{ site.title }} group name</a>
+			</li>
+		{% elsif page.type == "dws" %}
+			{% for nav in site.data.dws-navi %}
+				<li class="navi-item{% if nav.active == true %} active{% endif %}{% if nav.right == true %} navi-item-secondary{% endif %}{% if nav.last == true %} last{% endif %}">
+					<a href="#" class="uppercase light" title="{{ nav.title }}">
+						{{ nav.title }}
+					</a>
+
+					{% if nav.sub != %}
+						<span class="sbm-opener"></span>
+
+						<ul class="submenu sub-lv2 unstyle">
+							{% for sub in nav.sub %}
+								<li class="submenu-item {% if sub.active == true %}active{% endif %}">
+									{% if nav.language == true %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">
+											<span class="flag-icon flag-icon-{{ sub.class }}"></span>
+											<span class="flag-title">{{ sub.title }}</span>
+										</a>
+
+									{% else %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">{{ sub.title }}</a>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+
+			{% for tool in site.data.user-tools %}
+				<li class="navi-item navi-item-secondary lm-hide l-hide">
+					<a href="#" title="{{ tool.title }}" data-visible="1" data-link="#" class="uppercase light bp-{{ tool.class }}">{{ tool.title }}: <span class="{{ tool.class }}-count">{{ tool.count }}</span></a>
+				</li>
+			{% endfor %}
+
+			{% for nav in site.data.navi | limit:1 | offset:2 %}
+				<li class="navi-item{% if nav.active == true %} active{% endif %}{% if nav.right == true %} navi-item-secondary{% endif %}{% if nav.last == true %} last{% endif %} lm-hide l-hide">
+					<a href="#" class="uppercase light" title="{{ nav.title }}">
+						{{ nav.title }}
+					</a>
+
+					{% if nav.sub != %}
+						<span class="sbm-opener"></span>
+
+						<ul class="submenu sub-lv2 unstyle">
+							{% for sub in nav.sub %}
+								<li class="submenu-item {% if sub.active == true %}active{% endif %}">
+									{% if nav.language == true %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">
+											<span class="flag-icon flag-icon-{{ sub.class }}"></span>
+											<span class="flag-title">{{ sub.title }}</span>
+										</a>
+
+									{% else %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">{{ sub.title }}</a>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		{% else %}
+			{% for nav in site.data.navi %}
+				<li class="navi-item{% if nav.active == true %} active{% endif %}{% if nav.right == true %} navi-item-secondary{% endif %}{% if nav.last == true %} last{% endif %}">
+					<a href="#" class="uppercase light" title="{{ nav.title }}">
+						{{ nav.title }}
+					</a>
+
+					{% if nav.sub != %}
+						<span class="sbm-opener"></span>
+
+						<ul class="submenu sub-lv2 unstyle">
+							{% for sub in nav.sub %}
+								<li class="submenu-item {% if sub.active == true %}active{% endif %}">
+									{% if nav.language == true %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">
+											<span class="flag-icon flag-icon-{{ sub.class }}"></span>
+											<span class="flag-title">{{ sub.title }}</span>
+										</a>
+
+									{% else %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">{{ sub.title }}</a>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+
+			{% for tool in site.data.user-tools %}
+				<li class="navi-item navi-item-secondary lm-hide l-hide">
+					<a href="#" title="{{ tool.title }}" data-visible="1" data-link="#" class="uppercase light bp-{{ tool.class }}">{{ tool.title }}: <span class="{{ tool.class }}-count">{{ tool.count }}</span></a>
+				</li>
+			{% endfor %}
+
+			{% for nav in site.data.navi | limit:1 | offset:2 %}
+				<li class="navi-item{% if nav.active == true %} active{% endif %}{% if nav.right == true %} navi-item-secondary{% endif %}{% if nav.last == true %} last{% endif %} lm-hide l-hide">
+					<a href="#" class="uppercase light" title="{{ nav.title }}">
+						{{ nav.title }}
+					</a>
+
+					{% if nav.sub != %}
+						<span class="sbm-opener"></span>
+
+						<ul class="submenu sub-lv2 unstyle">
+							{% for sub in nav.sub %}
+								<li class="submenu-item {% if sub.active == true %}active{% endif %}">
+									{% if nav.language == true %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">
+											<span class="flag-icon flag-icon-{{ sub.class }}"></span>
+											<span class="flag-title">{{ sub.title }}</span>
+										</a>
+
+									{% else %}
+										<a href="#" class="uppercase light" title="{{ sub.title }}">{{ sub.title }}</a>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		{% endif %}
+	</ul>
+</nav>

@@ -1,0 +1,172 @@
+<div class="tiles-container-15 m-space-10 s-space-5">
+	<div class="column block">
+		<div class="tiles-container-5">
+			<div class="column s100 m75 l75">
+				<div class="h1 bold">Ford Focus 1.6TDCi (115px (s/s) 2015.5MY Zetec S (AP)</div>
+			</div>
+
+			<div class="column s100 m25 l25 m-text-right l-text-right">
+				<div class="h1 bold">£10,835</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="column s100 m50 l50">
+		<div class="tiles-container-10 s-space-5">
+			<div class="column block">
+				<ul class="unstyle tiles-container-3">
+					{% for equipment in site.data.equipment | limit:6 %}
+						<li class="column block" title="{{ equipment.value }}">
+							<span class="inline-block s50 m50 l50">{{ equipment.title }}</span><span class="inline-block s50 m50 l50 bold">{{ equipment.value }}</span>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="column block">
+				<ul class="unstyle tiles-container-3">
+					{% for equipment in site.data.equipment | limit:5 | offset:7 %}
+						<li class="column block" title="{{ equipment.value }}">
+							<span class="inline-block s50 m50 l50">{{ equipment.title }}</span><span class="inline-block s50 m50 l50 bold">{{ equipment.value }}</span>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="column block">
+				<ul class="unstyle tiles-container-3">
+					{% for equipment in site.data.equipment | limit:3 | offset:12 %}
+						<li class="column block" title="{{ equipment.value }}">
+							<span class="inline-block s50 m50 l50">{{ equipment.title }}</span><span class="inline-block s50 m50 l50 bold">{{ equipment.value }}</span>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="column block">
+				<ul class="unstyle tiles-container-3">
+					{% for equipment in site.data.equipment | limit:1 | offset:15 %}
+						<li class="column block" title="{{ equipment.value }}">
+							<span class="inline-block s50 m50 l50">{{ equipment.title }}</span><span class="inline-block s50 m50 l50 bold">{{ equipment.value }}</span>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="column s100 m50 l50">
+		<div class="tiles-container-10 s-space-5">
+			<div class="column block">
+				<div class="tiles-container-10 s-space-5 vertical-collapse">
+					<div class="column block">
+						<div class="slider-for">
+							{% for slider in site.data.slider %}
+								<div class="slider-primary">
+									<figure class="pos-relative overflow-hidden format-16x9 img-bg">
+										<img src="modix-datadir/img/16x9/16x9_01.jpg" alt="{{ site.title }} – {{ site.description }}" class="img-responsive h-v-center"/>
+									</figure>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<div class="column s-hide block">
+					<div class="slider-nav">
+						{% for slider in site.data.slider %}
+							<div class="slider-secondary">
+								<figure class="pos-relative overflow-hidden format-16x9 img-bg">
+									<img src="modix-datadir/img/16x9/16x9_01.jpg" alt="{{ site.title }} – {{ site.description }}" class="img-responsive h-v-center"/>
+								</figure>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+
+			<div class="column block">
+				<div class="tiles-container-15 s-space-5 m-space-10">
+					<div class="column s100 m100 l66 s-text-center">
+						<div class="h4">Share this vehicle</div>
+
+						<ul class="unstyle tiles-container-3">
+							{% for social-media in site.data.social-media %}
+								{% for anchor in social-media.anchor %}
+									<li class="column">
+										<a href="#" class="social-icons {{ anchor.link | downcase }}" title="Share this vehicle on {{ anchor.link }}">
+											<span class="{{ site.title | downcase}}-icons-{{ anchor.link | downcase }}"></span>
+										</a>
+									</li>
+								{% endfor %}
+							{% endfor %}
+						</ul>
+					</div>
+
+					<div class="column s100 m100 l33">
+						<a href="#" class="button btn-primary block" title="Reserve now">Reserve now <span class="{{ site.title | downcase }}-icons-pointer-right h6"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="column block">
+		<hr class="hr">
+	</div>
+
+	<div class="column block">
+		<div class="h2">Equipment & Features</div>
+	</div>
+
+	<div class="column block">
+		<ul class="equipment unstyle tiles-container-3">
+			{% for value in site.data.equipment %}
+				<li class="column s100 m50 l33">{{ value.value }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div class="column block">
+		<hr class="hr">
+	</div>
+
+	<div class="column block">
+		<div class="h2">Contact sales centre</div>
+	</div>
+
+	<div class="column block">
+		{% include _contact-formular.html %}
+	</div>
+
+	<div class="column block">
+		<div class="tiles-container-15 s-space-5 m-space-10">
+			<div class="column s100 m33 l33">
+				<div class="tiles-container-10 s-space-5">
+					<div class="column block">
+						<div class="bold h4">{{ site.title }} {{ site.name }}</div>
+						<address>Road beta, <br>
+							Brooks Lane Ind Est, <br>
+							{{ site.town }} <br>
+							{{ site.country }}, {{ site.zip }}
+						</address>
+					</div>
+
+					<div class="column block">
+						<div class="h4">Simon Coghlan</div>
+						<div class="h4"><span class="" data-phone="{{ site.phone }}" title="{{ site.phone }}">{{ site.phone }}</span></div>
+					</div>
+
+					<div class="column block">
+						<a href="#" class="green bold" title="Contact us">Contact us</a>
+						<div>Viewings by appointment only</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="column s100 m66 l66">
+				{% include _map.html height="400" %}
+			</div>
+		</div>
+	</div>
+</div>
