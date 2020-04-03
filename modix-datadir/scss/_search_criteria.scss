@@ -1,0 +1,42 @@
+.mdx-search-criteria {
+	.btn-criteria {
+		&::before {
+			content: attr(data-title) ": ";
+		}
+
+		.criteria-value {
+			// &::before {
+			// 	content: attr(data-title) ": ";
+			// }
+
+			&::after {
+				content: " " attr(data-suffix);
+			}
+
+			.multi-value {
+				&::before {
+					content: ", ";
+				}
+
+				&:first-child::before {
+					display: none;
+				}
+			}
+
+			.value-from::before {
+				content: attr(data-from) " ";
+			}
+
+			.value-to::before {
+				content: " " attr(data-to) " ";
+			}
+		}
+
+		.criteria-remove {
+			float: left;
+			position: relative;
+			top: 2px;
+			padding-right: 7px;
+		}
+	}
+}

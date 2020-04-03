@@ -1,0 +1,177 @@
+/* ##### Toggler ##### */
+.toggler {
+	&-btn {
+		cursor: pointer;
+
+		&::after {
+			font-family: $iconFontName;
+			content: "\e907";
+			display: inline-block;
+			position: relative;
+			top: 0;
+			left: 5px;
+			transform: rotate(0deg);
+			transition: transform $transitionTime;
+		}
+	}
+
+	.toggler-false {
+		display: none;
+	}
+
+	&.open {
+		.toggler-false {
+			display: inline-block;
+		}
+
+		.toggler-true {
+			display: none;
+		}
+
+		&::after,
+		.toggler-btn::after {
+			transform: rotate(180deg);
+		}
+
+		+ .toggle-content {
+			display: block;
+		}
+
+		.label-view-stock {
+			display: none;
+		}
+	}
+}
+
+.toggle-content {
+	display: none;
+}
+
+/* ##### Sticky Elements ##### */
+.sticky-placeholder {
+	.mdx-sticky.is-sticky {
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 100;
+	}
+
+	&.folded {
+		height: 0;
+		overflow: hidden;
+	}
+
+	.effect {
+		transform: translate(0, -100%);
+		z-index: 1;
+	}
+
+	.transition {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		transition: all linear 500ms;
+	}
+}
+
+/* ##### Tabs ##### */
+.content-tab-parent {
+	position: relative;
+
+	.btn-tab-navi {
+		.btn-tab {
+			padding: 5px 10px;
+			border: solid 1px $gray;
+			background: $gray;
+
+			&:focus,
+			&:hover {
+				color: inherit;
+				background: $lightGray;
+			}
+
+			&.active {
+				cursor: default;
+				border-color: $mediumGray;
+				background: $mediumGray;
+				color: $white;
+				z-index: 1;
+			}
+
+			&.disabled {
+				cursor: default;
+				opacity: 0.4;
+			}
+		}
+	}
+
+	.tab-contents {
+		.tab-frame {
+			display: none;
+			position: relative;
+
+			@include gridRespondTo((min-width:$mediaScreenS)) {
+				margin-top: 15px;
+			}
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+}
+
+.breakpoint-l {
+	.mdx-mobile-toggle-parent {
+		.mdx-mobile-toggle {
+			display: block;
+		}
+	}
+}
+
+@include gridRespondTo('s') {
+	.mdx-mobile-toggle-parent {
+		.mdx-mobile-toggle-click {
+			position: relative;
+			cursor: pointer;
+
+			.toggler-false {
+				display: none;
+			}
+
+			&::after {
+				font-family: $iconFontName;
+				content: "\e907";
+				position: relative;
+				display: inline-block;
+				top: 0;
+				left: 5px;
+				transform: rotate(0deg);
+				transition: transform $transitionTime;
+			}
+
+			&.active {
+				.toggler-false {
+					display: inline-block;
+				}
+
+				.toggler-true {
+					display: none;
+				}
+
+				&::after {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		.mdx-mobile-toggle {
+			display: none;
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+}

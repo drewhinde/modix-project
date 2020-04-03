@@ -1,0 +1,369 @@
+::-webkit-input-placeholder {
+	color: $placeholderColor;
+}
+
+::-moz-placeholder {
+	color: $placeholderColor;
+}
+
+:-moz-placeholder {
+	color: $placeholderColor;
+}
+
+:-ms-input-placeholder {
+	color: $placeholderColor;
+}
+
+.ie input,
+.ie textarea {
+	padding: 8px 10px 7px;
+	line-height: normal;
+}
+
+.ie select {
+	height: 100%;
+}
+
+form,
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	font-size: inherit;
+}
+
+.graphical-select,
+input,
+textarea {
+	font-size: 14px;
+	padding: 0 10px;
+	border: 1px solid $darkGray;
+	background: $white;
+	resize: none;
+	line-height: 40px;
+	color: $black;
+	border-radius: $borderRadius / 2;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	&:hover {
+		border-color: $primaryHoverColor;
+	}
+}
+
+textarea {
+	min-height: 100px;
+	line-height: 20px;
+	padding: 10px;
+}
+
+input:focus,
+textarea:focus,
+.inputFrom:not([value=""]) ~ p input.from,
+.inputTo:not([value=""]) ~ p input.to {
+	color: $black;
+}
+
+/* ##### Select ##### */
+select {
+	cursor: pointer;
+	width: 100%;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	background: none;
+}
+
+.graphical-select {
+	cursor: pointer;
+	position: relative;
+	display: block;
+//	@extend .uppercase;
+	@extend .light;
+
+	&.disabled {
+		opacity: .25;
+
+		select {
+			cursor: default;
+		}
+	}
+
+	&.selected {
+		&.reset {
+			&::before {
+				visibility: visible;
+				content: "\e845";
+			}
+
+			select {
+				visibility: hidden;
+			}
+		}
+
+		.selected-value {
+			color: $primaryColor;
+		}
+
+		&::before {
+			visibility: visible;
+			content: "\e845";
+		}
+
+		&::after {
+			visibility: hidden;
+		}
+	}
+
+	&.hover {
+		border: 1px solid $primaryLinkColor;
+	}
+
+	&.focus {
+		border: 1px solid $primaryLinkColor;
+
+		&::before {
+			visibility: visible;
+			color: $primaryLinkColor;
+		}
+
+		&::after {
+			visibility: hidden;
+		}
+	}
+
+	.selected-value {
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		vertical-align: top;
+		white-space: nowrap;
+		width: 90%;
+		color: $black;
+	}
+
+	&.disabled {
+		.selected-value {
+			overflow: hidden;
+			white-space: nowrap;
+			color: $darkGray;
+		}
+
+		&::after {
+			color: $darkGray;
+		}
+	}
+
+	&::before,
+	&::after {
+		font: {
+			family: $iconFontName;
+		}
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: inherit;
+		pointer-events: none;
+	}
+
+	&::before {
+		content: "\e901";
+		visibility: hidden;
+	}
+
+	&::after {
+		content: "\e907";
+	}
+}
+
+label {
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: relative;
+
+	&:hover {
+		> input[type="checkbox"]:not(:disabled),
+		> input[type="radio"]:not(:disabled) {
+			~ span {
+				cursor: pointer;
+				color: $primaryLinkColor;
+			}
+		}
+	}
+
+	> input[type="checkbox"],
+	> input[type="radio"] {
+		display: none;
+
+		&:disabled + span,
+		&:disabled ~ span {
+			opacity: .25;
+		}
+	}
+
+	.mark {
+		width: 18px;
+		height: 18px;
+		display: inline-block;
+		border: 1px solid $gray;
+		background: $gray;
+		border-radius: $borderRadius / 2;
+		vertical-align: top;
+	}
+
+	// Checkbox
+	> input[type="checkbox"] {
+		~ .mark::after {
+			display: none;
+			color: $white;
+		}
+
+		&:checked ~ .mark {
+			background: $primaryColor;
+			border-color: $primaryColor;
+
+			&::after {
+				font-family: $iconFontName;
+				display: block;
+				content: "\e916";
+				text-align: center;
+				font-size: 12px;
+				line-height: 18px;
+			}
+			
+			&.mark-color {
+				background: inherit;
+				
+				&::after {
+					font-size: 32px;
+					line-height: 80px;
+				}
+			}
+		}
+		
+		&:checked + .mark-color,
+		+ .mark-color {
+			width: 100%;
+			padding-bottom: 100%;
+			border: 1px solid $black;
+			
+			&.color1,
+			&.color-none {
+				background: $white;
+			}
+
+			&.color2,
+			&.color-beige {
+				background: #faebd7;
+			}
+
+			&.color3,
+			&.color-blue {
+				background: #4189de;
+			}
+
+			&.color4,
+			&.color-brown {
+				background: #a0522d;
+			}
+
+			&.color5,
+			&.color-yellow {
+				color: yellow;
+			}
+			
+			&.color6,
+			&.color-gold {
+				background: #e4b01f;
+			}
+
+			&.color7,
+			&.color-gray {
+				background: #7c7c7c;
+			}
+
+			&.color8,
+			&.color-green {
+				background: #4faa35;
+			}
+
+			&.color9,
+			&.color-orange {
+				background: #cf6a22;
+			}
+
+			&.color10,
+			&.color-red {
+				background: #ba2425;
+			}
+
+			&.color11,
+			&.color-black {
+				background: black;
+			}
+
+			&.color12,
+			&.color-silver {
+				background: #d5d5d5;
+			}
+
+			&.color13,
+			&.color-violet {
+				background: purple;
+			}
+
+			&.color14,
+			&.color-white {
+				background: $white;
+			}
+
+			&.color15,
+			&.color-pink {
+				background: pink;
+			}
+		}
+	}
+
+	// Radio
+	> input[type="radio"] {
+		~ .mark {
+			border-radius: 100%;
+		}
+
+		&:checked ~ .mark {
+			background: $primaryColor;
+			border-color: $primaryColor;
+			box-shadow: inset 0 0 0 4px $white;
+		}
+	}
+
+	.label,
+	.mark + span {
+		display: inline-block;
+		padding-left: 10px;
+		width: calc(100% - 18px);
+		vertical-align: top;
+	}
+}
+
+.label {
+	@extend .uppercase;
+	@extend .light;
+}
+
+input.required-error,
+textarea.required-error,
+.required-error > div,
+.graphical-select.required-error {
+	border: 1px solid $msgError !important;
+}
+
+.required-error > span {
+	color: $msgError;
+}

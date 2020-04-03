@@ -1,0 +1,97 @@
+// Project
+$project									: 'bentley';
+
+
+// Colors
+$primaryColor								: #7f988f;	// green
+$secondaryColor								: white;
+
+$primaryLinkColor							: $primaryColor;
+$secondaryLinkColor							: $secondaryColor;
+
+$primaryHoverColor							: lighten($primaryColor, 5%);
+$secondaryHoverColor						: darken($secondaryColor, 5%);
+
+$white										: white;
+$black										: #333333;
+
+$highlight									: #94c11d;
+
+$gray										: #efefef;
+$lightGray									: #e0e0e0;
+$mediumGray									: #757575;
+$darkGray									: $black;
+
+$placeholderColor							: $lightGray;
+$muted										: #b0b0b0;
+
+// Misc
+$transitionTime								: .5s;
+$dynamicVerticalPadding						: 60px;
+$boxShadow									: 0 0 0 rgba($black, 0);
+$borderRadius 								: 0;
+$navHeight									: 40px;
+
+// Image Background
+$imgFormatBGColor							: $placeholderColor;
+
+// Messages
+$msgError									: #cf2227;
+$msgWarning									: #f3c700;
+$msgInfo									: #5fa9dd;
+$msgSuccess									: #00922c;
+
+// Spacings
+$websiteStandardSpacing						: 20px;
+$textColumnSpacing							: 15px;
+
+
+// Loader Graphics
+$preLoader									: '../popup/preloader.gif';
+$preLoaderBG								: #f7f7f7;
+$loadIcon									: '../spinner-onwhite.gif'; // Possible values => "spinner-ongrey / spinner-onblack / spinner-onwhite"
+$loadIconBG									: white;
+
+
+// Icons
+$iconFontName								: '#{$project}-icons'; //#{$project}-icons
+$iconFontClassPrefix						: '#{$project}-icons-';
+
+// Fonts
+$fontPath									: '../fonts';
+$fontSize									: 14px;
+$lineHeight 								: 1.4;
+
+$fontRegular								: 'bentley-regular';
+$fontBold									: 'bentley-bold';
+$fontLight									: 'bentley-light';
+
+$font										: Arial, 'Sans-Serif';
+
+// Page
+$containerWidth								: 1240px;
+
+// Breakpoints:
+$mediaScreenL								: 1367px;
+$mediaScreenLM								: 1024px;
+$mediaScreenMS								: 800px;
+$mediaScreenS								: 699px;
+
+// Grid
+$responsive									: true;
+
+
+// Navi Burger Icon
+$hamburger-padding-x                        : 0 !default;
+$hamburger-padding-y                        : 0 !default;
+$hamburger-layer-width                      : 28px !default;
+$hamburger-layer-height                     : 3px !default;
+$hamburger-layer-spacing                    : 5px !default;
+$hamburger-layer-color                      : $mediumGray !default;
+$hamburger-layer-border-radius              : 0 !default;
+$hamburger-hover-opacity                    : 1 !default;
+$hamburger-hover-transition-duration        : 0.15s !default;
+$hamburger-hover-transition-timing-function : linear !default;
+$hamburger-hover-use-filter                 : false !default;
+$hamburger-hover-filter                     : opacity(100%) !default;
+$hamburger-dimensions                       : 60px !default;

@@ -1,0 +1,333 @@
+.main-navi.desktop-navi,
+ul.main-navi,
+.main-navi ul,
+.main-navi li {
+	position: relative;
+	z-index: 999;
+}
+
+.main-navi .sub-lv2,
+.main-navi .sub-lv3 {
+	display: none;
+}
+
+.main-navi .navi-item:hover .sub-lv2,
+.main-navi .submenu-item:hover .sub-lv3 {
+	display: block;
+}
+
+.main-navi .navi-item {
+	display: inline-block;
+
+	&:hover > a,
+	&.active > a {
+		color: $primaryColor;
+	}
+
+	a {
+		padding: 0 15px;
+		line-height: $navHeight;
+
+		@include gridRespondTo((min-width:$mediaScreenLM)) {
+			padding: 0 30px;
+		}
+	}
+
+	> a {
+		display: block;
+		font-size: 17px;
+
+		@include gridRespondTo((min-width:$mediaScreenLM)) {
+			line-height: 66px;
+			display: inline-block;
+		}
+	}
+
+	.submenu {
+		margin: 0;
+		margin-top: -1px;
+		background: $white;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		box-shadow: $boxShadow;
+		border: solid 1px $primaryColor;
+	}
+
+	&.last .sub-lv2 {
+		right: 0;
+		left: auto;
+
+		@include gridRespondTo((max-width:$mediaScreenL - 1)) {
+			text-align: left;
+		}
+	}
+}
+
+.main-navi .submenu .submenu-item {
+	position: relative;
+
+	&:not(:first-child) {
+		border-top: solid 1px $primaryColor;
+
+		@include gridRespondTo((min-width:$mediaScreenLM)) {
+			border-color: $white;
+		}
+	}
+
+	@include gridRespondTo((min-width:$mediaScreenLM)) {
+		color: $primaryColor;
+	}
+
+	 a {
+		white-space: nowrap;
+		display: block;
+	}
+
+	&:hover > a {
+		color: $white;
+		background: $primaryHoverColor;
+	}
+
+	&.active > a {
+		color: $white;
+		background: $primaryLinkColor;
+	}
+}
+
+/* ##### Subnavi Toggling ##### */
+.desktop-navi .navi-item .sbm-opener {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	line-height: $navHeight;
+	color: $primaryColor;
+	text-align: center;
+	border-left: 1px solid $primaryColor;
+	cursor: pointer;
+	display: inline-block;
+
+	&::after {
+		font-family: $iconFontName;
+		content: "\e907";
+		display: block;
+		transition: transform $transitionTime;
+	}
+
+	&.sbm-open::after {
+		transform: rotate(180deg);
+	}
+
+	@include gridRespondTo((min-width:$mediaScreenLM)) {
+		width: inherit;
+		border: none;
+		line-height: 66px;
+	}
+}
+
+.nav-button.nav-button {
+	position: absolute;
+	top: 0;
+	right: -15px;
+
+	@include gridRespondTo((min-width:$mediaScreenS)) {
+		top: 28px;
+	}
+
+	.hamburger {
+		width: $hamburger-dimensions;
+		height: $hamburger-dimensions;
+		padding: $hamburger-padding-y $hamburger-padding-x;
+		display: inline-block;
+		cursor: pointer;
+		transition-property: opacity, filter;
+		transition-duration: $hamburger-hover-transition-duration;
+		transition-timing-function: $hamburger-hover-transition-timing-function;
+		font: inherit;
+		color: inherit;
+		text-transform: none;
+		background-color: transparent;
+		border: 0;
+		margin: 0;
+		overflow: visible;
+		line-height: 1;
+
+		&:hover {
+			@if $hamburger-hover-use-filter == true {
+				filter: $hamburger-hover-filter;
+			}
+			@else {
+				opacity: $hamburger-hover-opacity;
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		.hamburger-inner {
+			transition-duration: 0.1s;
+			transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+			&::before {
+				transition: top 0.1s 0.14s ease,
+					opacity 0.1s ease;
+			}
+
+			&::after {
+				transition: bottom 0.1s 0.14s ease,
+					transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+			}
+		}
+	}
+
+	&.active .hamburger {
+		.hamburger-inner {
+			transform: rotate(45deg);
+			transition-delay: 0.14s;
+			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+			&::before {
+				top: 0;
+				opacity: 0;
+				transition: top 0.1s ease,
+					opacity 0.1s 0.14s ease;
+			}
+
+			&::after {
+				bottom: 0;
+				transform: rotate(-90deg);
+				transition: bottom 0.1s ease,
+					transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+			}
+		}
+	}
+
+	.hamburger-box {
+		width: $hamburger-layer-width;
+		height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+		display: inline-block;
+		position: relative;
+	}
+
+	.hamburger-inner {
+		display: block;
+		top: 50%;
+		margin-top: $hamburger-layer-height / -2;
+
+		&,
+		&::before,
+		&::after {
+			width: $hamburger-layer-width;
+			height: $hamburger-layer-height;
+			background-color: $hamburger-layer-color;
+			border-radius: $hamburger-layer-border-radius;
+			position: absolute;
+			transition-property: transform;
+			transition-duration: 0.15s;
+			transition-timing-function: ease;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+		}
+
+		&::before {
+			top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+		}
+
+		&::after {
+			bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+		}
+	}
+}
+
+@include gridRespondTo((max-width:$mediaScreenLM - 1)) {
+	.main-navi.mobile-navi {
+		display: block;
+		height: $hamburger-dimensions;
+	}
+
+	.main-navi.desktop-navi {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		box-shadow: $boxShadow;
+
+		.navi-item:hover .submenu {
+			display: none;
+		}
+	}
+
+	.desktop-navi .navi-item {
+		display: block;
+		background: $white;
+		border-bottom: 1px solid $primaryColor;
+
+		.sub-lv2,
+		.sub-lv3 {
+			position: relative;
+			top: auto;
+			left: auto;
+			border: none;
+			margin: 0;
+			padding: 0;
+			border-top: 1px solid $primaryColor;
+		}
+
+		&:hover > a {
+			color: $white;
+			background: $primaryHoverColor;
+		}
+
+		&.active > a {
+			color: $white;
+			background: $primaryColor;
+		}
+
+		&:hover,
+		&.active {
+			.sbm-opener {
+				color: $white;
+				border-color: $primaryColor;
+			}
+		}
+	}
+
+	.desktop-navi .navi-item {
+		.submenu.sub-lv2 > li > a {
+			padding: {
+				left: 40px;
+			}
+		}
+
+		.submenu.sub-lv3 > li > a {
+			padding: {
+				left: 60px;
+			}
+		}
+	}
+}
+
+// Bentley styles
+.navi-item-secondary.navi-item-secondary {
+	@include gridRespondTo((min-width:$mediaScreenLM)) {
+		float: right;
+	}
+
+	a {
+		font-size: 14px;
+		padding: 0 15px;
+	}
+
+	> a {
+		@include gridRespondTo((min-width:$mediaScreenLM)) {
+			padding-left: 0;
+			padding-right: 30px;
+		}
+	}
+}

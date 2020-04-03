@@ -1,0 +1,61 @@
+/* ###############################
+
+http://sass-lang.com/documentation/Sass/Script/Functions.html
+
+################################## */
+
+@mixin browserPrefixes($property, $value) {
+	@each $prefix in -webkit, -moz, -ms {
+		#{$prefix + '-' + $property}: $value;
+	}
+
+	#{$property}: $value;
+}
+
+@mixin aspectRatio($width, $height) {
+	padding-bottom: ($height / $width) * 100%;
+	display: block;
+}
+
+// Beware, this does not work in all browsers (No Firefox support yet)
+@mixin customBrowserScrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+	// For Google Chrome
+	::-webkit-scrollbar {
+		width:  $size;
+		height: $size;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+	}
+
+	::-webkit-scrollbar-track {
+		background: $background-color;
+	}
+
+	// For Internet Explorer
+	body {
+		scrollbar-face-color: $foreground-color;
+		scrollbar-track-color: $background-color;
+	}
+}
+
+@mixin vertical-align($position: relative) {
+	position: $position;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin align($position: relative) {
+	position: $position;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin square($width, $height: $width) {
+	width: $width;
+	height: $height;
+}

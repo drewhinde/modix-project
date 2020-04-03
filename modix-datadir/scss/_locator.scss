@@ -1,0 +1,124 @@
+.dealers-map {
+	height: 100%;
+    position: absolute;
+	
+	#map {
+		visibility: hidden;
+		position: absolute !important;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.pos-relative.full-height {
+	height:100%;
+}
+
+.dealers-list-container {
+	height: 100%;
+    position: absolute;
+    right: 0;
+	
+	.dealers-list {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding-right: 22px;
+		top: 0;
+		left: 0;
+	}
+	
+	&.disabled-scroller {
+		overflow: visible;
+		padding-bottom: 0;
+
+		.dealers-list-container {
+			position: static;
+			padding-right: 0;
+		}
+		
+		.iScrollVerticalScrollbar {
+			display: none;
+		}
+	}
+	
+	.dealer-item {
+		border-top: 1px solid $mediumGray;
+		padding: 15px 0;
+		
+		&:first-child {
+			border: none;
+			padding-top: 0;
+		}
+		
+		.dealer-name {
+			position: relative;
+			cursor: pointer;
+			font-size: 16px;
+			padding-right: 20px;
+			
+			&::after {
+				content: "\e808";
+				font-family: $iconFontName;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+		
+		.dealer-phone {
+			margin-top: 14px;
+			font-size: 24px;
+			line-height: 1em;
+		}
+		
+		&.dealer-active {
+			.dealer-name::after {
+				content: "\e80b";
+			}
+			
+			.dealer-buttons {
+				padding-top: 10px;
+			}
+		}
+	}
+}
+	
+.mapIconLabel {
+	width: 23px;
+	height: 23px;
+	line-height: 24px;
+	text-align: center;
+	color: $white;
+	font-size: 12px;
+	background: #c03;
+	border-radius: 50%;
+	
+	&.active {
+		width: 32px;
+		height: 32px;
+		line-height: 30px;
+		text-align: center;
+		font-size: 13px;
+		background: $white;
+		border-radius: 50%;
+	}
+}
+
+.iScrollVerticalScrollbar {
+	position: absolute;
+	width: 9px;
+	bottom: 2px;
+	top: 2px;
+	right: 0px;
+	overflow: hidden;
+	border: 1px solid $mediumGray;
+	border-radius: 3px;
+}
+
+.iScrollIndicator {
+	position: absolute;
+	width: 100%;
+	background: $primaryColor;
+	border-radius: 3px;
+}

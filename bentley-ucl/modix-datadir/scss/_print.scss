@@ -1,0 +1,21 @@
+#print {
+	width: 700px;
+	
+	.print-part {
+		padding: {
+			bottom: 20px;
+		}
+	}
+	
+	.print-right {
+		padding: {
+			left: 20px;
+		}
+
+		img {
+			margin: {
+				bottom: 10px;
+			}
+		}
+	}
+}

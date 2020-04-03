@@ -1,0 +1,102 @@
+[data-getcode] {
+	position: relative;
+	cursor: pointer;
+	margin: 20px 0;
+	
+	&::after {
+		content: 'Click to get the code!';
+		font-size: 30px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 999;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);	
+	}
+	
+	&:hover::after {
+		color: $white;
+	}
+	
+	&::before {
+		content: '';
+		background: rgba(138, 199, 246, 0.5);
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 998;
+	}
+}
+
+/*{if $mdx.area}
+[data-getcode="{$mdx.area}"]:before {
+	background:rgba(28, 172, 82, 0.5);
+}
+{/if}*/
+
+.beautify-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9998;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.beautify-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 1000px;
+	height: 500px;
+	overflow: auto;
+	padding: 0 20px;
+	background: $white;
+}
+
+.beautify-content.loader {
+	background-color: $white;
+}
+
+.beautify-overlay-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	background: $white;
+	cursor: pointer;
+}
+
+.beautify-overlay-close {	
+	&::before {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 20px;
+	}
+	
+	&:hover::before {
+		color: $msgError;
+	}
+}
+
+.beautify-content .copy-beautified {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: $black;
+	color: $white;
+	padding: 5px 10px;
+	border-radius: 0 0 0 5px;
+}
+
+.beautify-content .copy-beautified:hover {
+	background: $mediumGray;
+}

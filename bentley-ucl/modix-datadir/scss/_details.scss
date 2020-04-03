@@ -1,0 +1,58 @@
+.detail-overlay {
+	@include align(absolute);
+	@extend .text-center;
+	background: rgba($highlight, .95);
+	border-radius: 100%;
+	color: $white;
+	pointer-events: none;
+
+	&-play {
+		@include square(56px);
+		line-height: 56px;
+		font-size: 16px;
+	}
+
+	&-zoom {
+		@include square(80px);
+		line-height: 80px;
+		font-size: 36px;
+	}
+
+	&:hover {
+		color: $highlight;
+		background: rgba($white, .95);
+	}
+}
+
+.specifications {
+	@extend .unstyle;
+
+	li:nth-child(2n+1) {
+		background: $gray;
+	}
+
+	@include gridRespondTo((min-width:$mediaScreenLM)) {
+		li:nth-child(2n+1) {
+			background: none;
+		}
+
+		li:nth-child(4n+1),
+		li:nth-child(4n+2) {
+			background: $gray;
+		}
+	}
+}
+
+.equipment li {
+	position: relative;
+	padding-left: 20px;
+
+	&::before {
+		font-family: '#{$project}-icons';
+		content: "\e801";
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $primaryLinkColor;
+	}
+}

@@ -1,0 +1,164 @@
+.button,
+button[type="submit"],
+button[type="reset"] {
+	@extend .font-light;
+	@extend .uppercase;
+	@extend .text-center;
+	width: 100%;
+	display: block;
+	padding: 0 10px;
+	line-height: 40px;
+	border-radius: $borderRadius;
+	border: solid 1px;
+	font-size: 16px;
+}
+
+button[type="submit"],
+button[type="reset"] {
+	cursor: pointer;
+}
+
+.button:hover,
+.button:not(.btn-icon).active,
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+	color: $white;
+	background: $primaryHoverColor;
+}
+
+.button,
+button {
+	&.disabled {
+		opacity: 0.3;
+		cursor: default;
+
+		:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+button[disabled] {
+	pointer-events: none;
+}
+
+.button,
+.checkbox {
+	&:not(.active) span.del,
+	&.active span.add {
+		display: none;
+	}
+}
+
+.btn-primary.btn-primary.btn-primary {
+	color: $white;
+	background: $primaryColor;
+	border-color: $primaryColor;
+
+	&:focus,
+	&:hover {
+		background: $primaryHoverColor;
+		border-color: $primaryHoverColor;
+	}
+}
+
+.btn-secondary.btn-secondary.btn-secondary {
+	color: $primaryColor;
+	background: $secondaryColor;
+	border-color: $primaryColor;
+
+	&:focus,
+	&:hover {
+		color: $primaryHoverColor;
+		border-color: $primaryHoverColor;
+	}
+}
+
+.btn-icon.btn-icon.btn-icon {
+	text-align: left;
+	border: none;
+	color: $primaryColor;
+	padding: 0;
+	padding-left: 25px;
+	position: relative;
+
+	> [class^="#{$project}-"] {
+		position: absolute;
+		top: 8px;
+		left: 0;
+		font-size: 20px;
+	}
+
+	&:focus,
+	&:hover {
+		color: $primaryHoverColor;
+		background: none;
+	}
+
+	&-flat {
+		line-height: 1.75;
+
+		> [class^="#{$project}-"] {
+			top: 4px;
+		}
+	}
+}
+
+.btn-tab.btn-tab.btn-tab {
+	background: $gray;
+	border-color: $gray;
+	padding: 5px 10px;
+	line-height: inherit;
+	font-size: inherit;
+
+	&.active,
+	&:hover {
+		color: $white;
+		background: $mediumGray;
+	}
+}
+
+.btn-criteria.btn-criteria.btn-criteria {
+	text-align: left;
+}
+
+.btn-reset.btn-reset.btn-reset {
+	@include gridRespondTo((min-width:$mediaScreenS)) {
+		width: inherit;
+		display: inline-block;
+	}
+}
+
+.btn-top {
+	@extend .uppercase;
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+
+	@include gridRespondTo((min-width:$mediaScreenL)) {
+		right: 50%;
+		bottom: 30px;
+		margin-right: -636px;
+	}
+
+	[class^="#{$project}-icons-"],
+	[class*=" #{$project}-icons-"] {
+		color: $lightGray;
+		background: $gray;
+		font-size: 24px;
+		padding: 5px;
+		margin-left: 5px;
+		@extend .vertical-middle;
+	}
+
+	&:hover {
+		color: $primaryLinkColor;
+		cursor: pointer;
+
+		[class^="#{$project}-icons-"],
+		[class*=" #{$project}-icons-"] {
+			color: $white;
+			background: $primaryLinkColor;
+		}
+	}
+}

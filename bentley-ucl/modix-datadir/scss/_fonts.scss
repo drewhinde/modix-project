@@ -1,0 +1,23 @@
+@font-face {
+	font-family: '#{$project}-bold';
+	src: url('#{$fontPath}/bentley-expanded_bold_web-webfont.woff2') format('woff2'),
+		 url('#{$fontPath}/bentley-expanded_bold_web-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: '#{$project}-light';
+	src: url('#{$fontPath}/bentley-expanded_light_web-webfont.woff2') format('woff2'),
+		 url('#{$fontPath}/bentley-expanded_light_web-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: '#{$project}-regular';
+	src: url('#{$fontPath}/bentley-expanded_regular_web-webfont.woff2') format('woff2'),
+		 url('#{$fontPath}/bentley-expanded_regular_web-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

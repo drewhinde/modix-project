@@ -1,0 +1,212 @@
+/* ##### GENERAL ##### */
+#result-tools-top{
+	.found {}
+
+	#view {
+		a {
+			font-size: 24px;
+			color: $lightGray;
+			cursor: pointer;
+
+			&.active,
+			&:hover {
+				color: $primaryColor;
+			}
+
+			&.active {
+				cursor: default;
+			}
+		}
+	}
+}
+
+.status-banner {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	background: $primaryLinkColor;
+	color: $white;
+	padding: 10px 0;
+	line-height: 20px;
+}
+
+#details .status-banner {
+	top: 0;
+	bottom: auto;
+	line-height: 30px;
+}
+
+.mdx-result-list .vehicle .headline .price .rate {
+	color: $primaryLinkColor;
+}
+
+.mdx-result-list .vehicle .headline .price .saved,
+#details .price .saved {
+	color: $msgSuccess;
+}
+
+
+/* ##### List View ##### */
+.mdx-result-list {
+	&.is-loading {
+		border: none;
+	}
+
+	.vehicle {
+		&.delete-notepad {
+			opacity: 0.2;
+		}
+
+		.content .tools .button.close,
+		&.open .content .tools .button.vehicle-info {
+			display: none;
+		}
+
+		&.open {
+			background: $gray;
+
+			.vehicle-infos,
+			.tools .button.close {
+				display: block;
+
+				// Bentley styles
+				.btn-tab:not(.active) {
+					background: $white;
+
+					&:hover {
+						background: $mediumGray;
+					}
+				}
+			}
+		}
+
+		.content .data li {
+			&.location {
+				margin: 5px 0;
+			}
+
+			&.consumption {
+				.consumption-text,
+				.consumption-label {
+					display: inline-block;
+					vertical-align: top;
+				}
+
+				.consumption-label {
+					text-align: right;
+				}
+			}
+		}
+
+		.vehicle-infos {
+			display: none;
+			position: relative;
+		}
+	}
+}
+
+.mdx-result-list:not(.grid) {
+	.vehicle:not(:last-child) .vehicle-inner {
+		border-bottom: 1px solid $lightGray;
+	}
+
+	.vehicle-inner,
+	.vehicle-infos {
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		@include gridRespondTo((min-width:$mediaScreenS)) {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	}
+}
+
+/* ##### Grid View ##### */
+.mdx-result-list.grid {
+	.vehicle-inner {
+		padding-bottom: 20px;
+		border-bottom: 1px solid $lightGray;
+
+		@include gridRespondTo((min-width:$mediaScreenS)) {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+
+	.vehicle:last-child .vehicle-inner {
+		border-bottom: none;
+	}
+}
+
+.pages {
+	.page {
+		padding: 12px 18px;
+		border-radius: $borderRadius / 2;
+		@extend .bold;
+
+		&:hover,
+		&.active {
+			color: $primaryColor;
+		}
+	}
+}
+
+.img-count {
+	@extend .bold;
+
+	[class^="#{$project}-icons-"],
+	[class*=" #{$project}-icons-"] {
+		position: relative;
+		top: 5px;
+	}
+}
+
+// Bentley styles
+.vehicle-infos .slick-dots li {
+	button {
+		background: $lightGray;
+	}
+
+	&:hover button,
+	&.slick-active button {
+		background: $highlight;
+	}
+}
+
+.mobile-fav {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	font-size: 28px;
+	color: $white;
+
+	&.active,
+	&:hover {
+		color: $primaryLinkColor;
+
+		&::before {
+			position: relative;
+			z-index: 1;
+		}
+
+		&::after {
+			content: "";
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			background: $white;
+		}
+	}
+}
+
+#result-tools-bottom a {
+	&.active:hover,
+	&:hover {
+		color: $black;
+	}
+}

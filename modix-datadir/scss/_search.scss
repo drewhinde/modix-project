@@ -1,0 +1,177 @@
+#search-error {
+	text-align: center;
+}
+
+.mdx-result-list #search-error.error-on-result {
+	padding: {
+		top: 40px;
+	}
+}
+
+.range {
+	.label {
+		margin-bottom: 10px;
+	}
+}
+
+#search-quicklinks .quick-link-item {
+	margin: {
+		right: 10px;
+	}
+}
+
+#search .adv-search {
+	display: none;
+}
+
+#search .adv-search-trigger {
+	.simple,
+	&.triggered .adv {
+		pointer-events: none;
+		display: none;
+	}
+
+	.adv,
+	&.triggered .simple {
+		pointer-events: inherit;
+		display: block;
+	}
+}
+
+#search .price-monthly-rate {
+	.sliders {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+}
+
+/* ##### Vehicle search slider ##### */
+#search {
+	.noUi-base {
+		border: solid 1px $mediumGray;
+		border-radius: 5px;
+	}
+
+	.noUi-connect {
+		background: $mediumGray;
+		box-shadow: none;
+	}
+
+	.noUi-horizontal {
+		height: 8px;
+	}
+
+	.noUi-target {
+		box-shadow: none;
+		border-radius: 5px;
+		background: $placeholderColor;
+		border: none;
+	}
+
+	.noUi-origin {
+		border-radius: 5px;
+	}
+
+	.noUi-background {
+		background: $white;
+		box-shadow: none;
+	}
+
+	.noUi-handle {
+		border-radius: 100%;
+		width: 20px;
+		height: 20px;
+		border: solid 1px $mediumGray;
+		box-shadow: none;
+		top: -6px;
+		left: -10px;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	.noUi-pips-horizontal {
+		padding: 0;
+	}
+
+	.noUi-marker-horizontal.noUi-marker {
+		width: 1px;
+		background: #acacac;
+	}
+
+	.noUi-marker-large {
+
+		&:nth-last-child(2) {
+			margin-left: 0;
+		}
+	}
+
+	.noUi-value {
+		color: $black;
+		font-family: $fontBold;
+		font-size: 12px;
+	}
+}
+
+#search-type-switch label {
+	display: inline-block;
+	margin: 0;
+
+	@include gridRespondTo('s') {
+		#search-type-switch label {
+			display: inline-block;
+			margin: {
+				bottom: 10px;
+			}
+		}
+	}
+}
+
+#search-fields .select-field {
+	&.range {
+		margin: {
+			bottom: 10px;
+		}
+	}
+
+	&.car input {
+		display: none;
+	}
+
+	&.lcv .graphical-select {
+		display: none;
+	}
+}
+
+#search-extras .extra-container label > span.extra-found {
+	padding: 0 5px;
+
+	&::before {
+		content: "(";
+	}
+
+	&::after {
+		content: ")";
+	}
+
+	&:empty {
+		display: none;
+	}
+}
+
+// Bentley styles
+.label-huge.label-huge.label-huge {
+	position: relative;
+	top: -3px;
+}
+
+.label-align {
+	@include gridRespondTo((min-width:$mediaScreenL)) {
+		padding-top: 62px;
+	}
+}

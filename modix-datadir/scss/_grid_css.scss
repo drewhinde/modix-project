@@ -1,0 +1,117 @@
+html::before {
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.container {
+	@if ($responsive) {
+		width: 100%;
+		max-width: $containerWidth;
+	} @else {
+		width: $containerWidth;
+	}
+	margin: 0 auto;
+}
+
+.container-full {
+	width: 100%;
+}
+
+.mdxSP {
+	display: none;
+}
+
+@include gridViewClasses();
+
+@include gridBuildTilesColumnsContainer(1, 1, 5); // Spaces to 5
+@include gridBuildTilesColumnsContainer(); // Spaces to 40
+
+/*
+######################
+	Media Screens
+######################
+*/
+@if ($responsive) {
+	@include gridRespondTo('l') {
+		html::before {
+			content: 'Desktop';
+		}
+		@include gridViewClasses('l');
+		@include gridOffsetClasses('l');
+		@include textAlignment('l');
+		@include textColumns('l');
+		@include gridBuildTilesColumnsContainer(1, 1, 5, 'l'); // Spaces to 5
+		@include gridBuildTilesColumnsContainer(5, 1, 8, 'l'); // Spaces to 40
+	}
+
+	@include gridRespondTo('m') {
+		html::before {
+			content: 'Tablet';
+		}
+		@include gridViewClasses('m');
+		@include gridOffsetClasses('m');
+		@include textAlignment('m');
+		@include textColumns('m');
+		@include gridBuildTilesColumnsContainer(1, 1, 5, 'm'); // Spaces to 5
+		@include gridBuildTilesColumnsContainer(5, 1, 8, 'm'); // Spaces to 40
+	}
+
+	@include gridRespondTo('lm') {
+		html::before {
+			content: 'DesktopTablet';
+		}
+		@include gridViewClasses('lm');
+		@include gridOffsetClasses('lm');
+		@include textAlignment('lm');
+		@include textColumns('lm');
+		@include gridBuildTilesColumnsContainer(1, 1, 5, 'lm'); // Spaces to 5
+		@include gridBuildTilesColumnsContainer(5, 1, 8, 'lm'); // Spaces to 40
+	}
+
+	@include gridRespondTo('ms') {
+		html::before {
+			content: 'TabletPhone';
+		}
+		@include gridViewClasses('ms');
+		@include gridOffsetClasses('ms');
+		@include textAlignment('ms');
+		@include textColumns('ms', 1, 3);
+		@include gridBuildTilesColumnsContainer(1, 1, 5, 'ms'); // Spaces to 5
+		@include gridBuildTilesColumnsContainer(5, 1, 8, 'ms'); // Spaces to 40
+	}
+
+	@include gridRespondTo('s') {
+		html::before {
+			content: 'Phone';
+		}
+		@include gridViewClasses('s');
+		@include gridOffsetClasses('s');
+		@include textAlignment('s');
+		@include textColumns('s', 1, 2);
+		@include gridBuildTilesColumnsContainer(1, 1, 5, 's'); // Spaces to 5
+		@include gridBuildTilesColumnsContainer(5, 1, 8, 's'); // Spaces to 40
+	}
+} @else {
+	html::before {
+		content: 'Desktop';
+	}
+	@include gridViewClasses('l');
+	@include gridOffsetClasses('l');
+	@include textColumns('l');
+}
+
+@media print {
+	html::before {
+		content: 'Print';
+	}
+
+	html,
+	body {
+		background:#fff;
+	}
+
+	.print-hide {
+		display: none !important;
+	}
+}

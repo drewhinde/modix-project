@@ -1,0 +1,137 @@
+---
+layout: default
+title: Homepage
+---
+
+{% include _slider.html %}
+
+<main id="content">
+	<div id="main-content">
+		<div class="content-box">
+			<div class="content-body">
+				{% include _styleguide.html %}
+
+				<section class="container-full">
+					<div class="container">
+						<div class="dynamic-vertical-padding-60-30">
+							<div class="tiles-container-5">
+								<div class="column block text-center">
+									<h1 class="h1 light uppercase">Find a pre-owned {{ site.title }}</h1>
+								</div>
+
+								<div class="column block text-center">
+									<p>View the latest Pre-Owned selection and find a match to your tastes. We have access to all models across the network <br>and will endeavour to match your specification preferences and budget.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="container-full">
+					<div class="container">
+						<div class="dynamic-vertical-padding-60-30">
+							<div class="tiles-container-10">
+								<div class="column block text-center">
+									<h2 class="h3 light uppercase">Select location</h2>
+								</div>
+
+								<div class="column block m-hide l-hide">
+									<select>
+										<option value="">Select location</option>
+										{% for tab in site.data.tabs-location %}
+											<option value="{{ tab.title }}">{{ tab.title }}</option>
+										{% endfor %}
+									</select>
+								</div>
+
+								<div class="column block">
+									{% include _tabs-location.html %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="container-full">
+					<div class="container">
+						<div class="dynamic-vertical-padding-60-30">
+							<div class="tiles-container-10">
+								<div class="column block text-center">
+									<h2 class="h3 light uppercase">Select models</h2>
+								</div>
+
+								<div class="column block m-hide l-hide">
+									<select>
+										<option value="">Select models</option>
+										{% for tab in site.data.tabs-models %}
+											<option value="{{ tab.title }}">{{ tab.title }}</option>
+										{% endfor %}
+									</select>
+								</div>
+
+								<div class="column block s-hide">
+									<div class="tiles-container-5 text-center">
+										{% for tab in site.data.tabs-models %}
+											<div class="column">
+												<button class="button btn-tab{% if tab.active == true %} active{% endif %}">{{ tab.title }}</button>
+											</div>
+										{% endfor %}
+									</div>
+								</div>
+
+								<div class="column block">
+									{% include _filter-models.html %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="container-full">
+					<div class="container">
+						<div class="dynamic-vertical-padding-60-30">
+							<div class="tiles-container-10">
+								<div class="column block text-center">
+									<h2 class="h3 light uppercase">Refine search</h2>
+								</div>
+
+								<div class="column block">
+									{% include _search.html %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				{% include _featured-vehicles.html %}
+
+				<section class="container-full">
+					<div class="container container-padding-only container-no-border">
+						
+							<div class="tiles-container-10 text-center">
+								<div class="column block">
+									<h2 class="h1 light uppercase">{{ site.title }} pre-owned programme</h2>
+								</div>
+
+								<div class="column block">
+									<div class="inline-block l66">
+										<p>Few cars on the road are as finely crafted as a Pre-Owned Bentley, or exhibit the same levels of luxury and heart-stopping performance. With a heritage of competitive racing and hand craftsmanship that reaches back over 95 years, Bentley is unique. Every car to bear the Bentley marque has been built to the same exacting standards, whether it comes to you brand new or from the Pre-Owned Bentley programme.</p>
+									</div>
+								</div>
+
+								<div class="column s100">
+									<a href="#" class="button btn-primary">Discover all benefits</a>
+								</div>
+
+								<div class="column block">
+									<figure class="pos-relative overflow-hidden format-8x3 img-bg">
+										<img src="modix-datadir/img/8x3/banner-01.jpg" alt="{{ site.title }} – {{ site.description }}" class="img-responsive h-v-center"/>
+									</figure>
+								</div>
+							</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</main>

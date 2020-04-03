@@ -1,0 +1,123 @@
+html.no-scroll,
+body.no-scroll {
+	overflow: hidden !important;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+html.no-overflow,
+body.no-overflow {
+	overflow: hidden !important;
+}
+
+.footer-fixed {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.img-bg {
+	background: $imgFormatBGColor;
+}
+
+.inline-block {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.vertical-top,
+.vertical-top [class^="tiles-container-"] > .column,
+.vertical-top [class*=" tiles-container-"] > .column,
+.vertical-top [class^="tiles-container-"].slick-slider .slick-track > .column,
+.vertical-top [class*=" tiles-container-"].slick-slider .slick-track > .column {
+	vertical-align: top !important;
+}
+
+.vertical-middle,
+.vertical-middle [class^="tiles-container-"] > .column,
+.vertical-middle [class*=" tiles-container-"] > .column,
+.vertical-middle [class^="tiles-container-"].slick-slider .slick-track > .column,
+.vertical-middle [class*=" tiles-container-"].slick-slider .slick-track > .column {
+	vertical-align: middle !important;
+}
+
+.vertical-bottom,
+.vertical-bottom [class^="tiles-container-"] > .column,
+.vertical-bottom [class*=" tiles-container-"] > .column,
+.vertical-bottom [class^="tiles-container-"].slick-slider .slick-track > .column,
+.vertical-bottom [class*=" tiles-container-"].slick-slider .slick-track > .column {
+	vertical-align: bottom !important;
+}
+
+.block {
+	display: block !important;
+}
+
+.pos-relative {
+	position: relative;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.h-v-center,
+.pos-relative .h-v-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include browserPrefixes(transform, translate(-50%, -50%));
+	transform-style: flat;
+}
+
+[class^="tiles-container-"].vertical-collapse,
+[class*=" tiles-container-"].vertical-collapse {
+	margin: {
+		top: 0 !important;
+		bottom: 0 !important;
+	}
+}
+
+[class^="format-"] > img,
+[class^="format-"] > iframe,
+[class^="format-"] > source,
+[class*=" format-"] > img,
+[class*=" format-"] > iframe,
+[class*=" format-"] > source {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.trim-text {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.msg-error {
+	color: $msgError;
+}
+
+.msg-warning {
+	color: $msgWarning;
+}
+
+.msg-info {
+	color: $msgInfo;
+}
+
+.msg-success {
+	color: $msgSuccess;
+}
+
+span[data-phone] a {
+	color: inherit;
+}
+
+@include elementFloats();
+@include textAlignment();
+@include generateImageFormat();

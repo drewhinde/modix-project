@@ -1,0 +1,123 @@
+.mdx-form-zip-autosuggestion {
+	.autoSuggestion {
+		position: relative;
+		top: 0;
+		height: 0;
+		
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			position: absolute;
+			background: $white;
+			background: rgba(255,255,255,0.95);
+			border: 1px solid darken($white, 45%);
+			min-width: 100%;
+			max-height: 297px;
+			white-space: nowrap;
+			overflow-y:auto;
+			top:-1px;
+			bottom: auto;
+			left: 0;
+			z-index: 5;
+			
+			li {
+				cursor: default;
+				padding: 0 10px;
+				z-index: 1000;
+				border-top: 1px solid darken($white, 45%);
+				line-height: 32px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				
+				&.activeZip {
+					background: darken($white, 45%);
+				}
+				
+				&:not(.error) {
+					cursor: pointer;
+					
+					&:hover {
+						background: darken($white, 45%);
+					}
+				}
+				
+				&:first-child {
+					border-top: 0;
+				}
+			}
+		}
+	}
+	
+	.auto-location {
+		&.active-location {
+			.get-location {
+				color: $primaryColor;
+			}
+
+			input[name="zip"] {
+				color: $primaryColor;
+			}
+		}
+		
+		input[name="zip"] {
+			padding: {
+				left: 37px;
+			}
+		}
+		
+		.get-location {
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			display: block;
+			height: 40px;
+			width: 40px;
+			text-align: center;
+			line-height: 40px;
+			font-size: 20px;
+			cursor: pointer;
+		}
+	}
+	
+	.mdx-geolocate {
+		padding: 8px;
+		font: {
+			size: 1.2em;
+		}
+		
+		&.icon-location {
+			color: lighten($black, 30%);
+		}
+		
+		&.geolocate-loading {
+			color: lighten($black, 30%);
+		}
+		
+		&.geolocate-active {
+			color: $primaryColor;
+			cursor: default;
+			text-decoration: none;
+			
+			span {
+				&.active {
+					display:inline;
+				}
+				
+				&.inactive {
+					display:none;
+				}
+			}
+		}
+		
+		span {
+			&.active {
+				display: none;
+			}
+			
+			&.inactive {
+				display: inline;
+			}
+		}
+	}
+}

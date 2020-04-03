@@ -1,0 +1,47 @@
+/* ##### Save Search Page ##### */
+.saved-search-item {
+	.saved-search-iteration {
+		padding: {
+			bottom: 5px;
+		}
+	}
+	
+	.item-row.extras .title-data .data-item,
+	.item-row.model .title-data .data-item {
+		&::before {
+			content: ', ';
+		}
+		
+		&:first-child:before {
+			display: none;
+		}
+	}
+	
+	span {
+		line-height: 25px;
+	}
+	
+	.from:before {
+		content: attr(data-from) ": ";
+	}
+		
+	.to:before {
+		content: attr(data-to) ": ";
+	}
+	
+	.inline-block {
+		vertical-align: middle;
+	}
+	
+	.data {
+		padding: {
+			bottom: 10px;
+		}
+	}
+	
+	.tool-buttons a {
+		span {
+			line-height: 20px;
+		}
+	}
+}

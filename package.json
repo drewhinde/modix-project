@@ -1,0 +1,23 @@
+{
+  "name": "Bentley-UCL",
+  "description": "Modix-Project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "scss": "node-sass --output-style compressed --source-map true -o modix-datadir/css modix-datadir/scss",
+    "autoprefixer": "postcss -u autoprefixer -r modix-datadir/css/*.css",
+    "serve": "browser-sync start --proxy 'http://127.0.0.1:4000/' --files 'bentley-ucl/*.html' 'modix-datadir/css/*.css' 'modix-datadir/js/*.js'",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "watch:css": "onchange 'modix-datadir/scss/*.scss' -- npm run build:css",
+    "watch:all": "parallelshell 'npm run serve' 'npm run watch:css' 'jekyll serve'",
+    "postinstall": "ncu -u && npm run build:css && npm run watch:all"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "browser-sync": "^2.18.2",
+    "node-sass": "^4.4.0",
+    "onchange": "^3.2.0",
+    "parallelshell": "^3.0.1",
+    "postcss-cli": "^4.1.1"
+  }
+}

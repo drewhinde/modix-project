@@ -1,0 +1,183 @@
+.mdx-results-compare.comparison {
+	.compare-container {
+		display: table;
+		width: 100%;
+	}
+	
+	.c-row {
+		display: table-row;
+	}
+	
+	.c-column {
+		display: table-cell;
+		vertical-align: top;
+	}
+	
+	.c-title {
+		line-height: 25px;
+		color: $black;
+		vertical-align: top;
+	}
+	
+	.c-data-title {
+		color: $black;
+	}
+	
+	.c-data {
+		padding: 10px 0;
+	}
+	
+	.remove {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 5;
+		background: $primaryLinkColor;
+		width: 32px;
+		height: 32px;
+		line-height: 32px;
+		color: $white;
+	}
+	
+	.v-title a {
+		line-height: 25px;
+		color: $black;
+	}
+	
+	.v-price {
+		.c-data {
+			border {
+				top: 2px solid $primaryLinkColor;
+			}
+		}
+		
+		.c-title.c-data {
+			border: none;
+		}
+		
+		.saved {
+			line-height: 18px;
+			color: $primaryLinkColor;
+		}
+
+		.discount-price {
+			line-height: 30px;
+			color: $black;
+		}
+		
+		.prev-price,
+		.rate {
+			line-height: 20px;
+			color: $black;
+		}
+		
+		.mwst {
+			line-height: 18px;
+			color: $black;
+		}
+	}
+	
+	.v-dealer {
+		.c-column {
+			border {
+				top: 1px solid $primaryLinkColor;
+			}
+		}
+		
+		.c-data {
+			padding {
+				top: 20px;
+			}
+		}
+		
+		.d-address {
+			color: $black;
+		}
+		
+		.d-name {
+		
+		}
+		
+		.d-phone {
+		
+		}
+	}
+
+	.v-dealer-contact {
+		.c-column {
+			border: {
+				bottom: 1px solid $primaryLinkColor;
+			}
+		}
+		
+		.c-data {
+			padding: {
+				bottom: 20px;
+			}
+		}
+	}
+	
+	.v-data-headline {
+		.c-data {
+			padding: 30px 0 20px;
+		}
+		
+		~ .v-data.c-row:nth-child(2n) {
+			background: $mediumGray;
+		}
+	}
+	
+	.v-data {
+		.c-data {
+			padding: 7px 0;
+			margin: 2px 0;
+		}
+		
+		.c-data.best {
+			background: $white;
+		}
+		
+		.c-data-title {
+			padding: 7px 0;
+		}
+	}
+	
+	.v-detail-link .c-data {
+		border {
+			top: 1px solid $primaryLinkColor;
+		}
+		margin {
+			top: 20px;
+		}
+	}
+}
+
+@include gridRespondTo((max-width:$mediaScreenMS - 1)) {
+	.mdx-results-compare.comparison {
+		.compare-container {
+			display: block;
+		}
+
+		.c-row {
+			display: block;
+			margin: 0 -5px;
+		}
+
+		.c-column {
+			display: inline-block;
+			padding: 0 5px;
+		}
+
+		.v-dealer .c-column:not(:first-child) {
+			border {
+				top: none;
+			}
+
+			.c-data {
+				padding {
+					top: 0;
+				}
+			}
+		}
+	}
+}

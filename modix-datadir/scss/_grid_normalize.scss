@@ -1,0 +1,105 @@
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+	display: block;
+}
+
+fieldset,
+figure,
+a,
+img {
+	margin: 0;
+	border: none;
+	padding: 0;
+}
+
+address{
+	font: {
+		style: normal;
+	}
+}
+
+table {
+	font: {
+		size: inherit;
+	}
+}
+
+td,
+th {
+	vertical-align: top;
+	text-align: left;
+}
+
+b,
+strong,
+th {
+	font: {
+		weight: 700;
+	}
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+img {
+	text-decoration: none;
+	color: $primaryLinkColor;
+}
+
+iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.img-responsive,
+main img:not(.keep-prop) {
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.iframe-touch-scroll {
+	-webkit-overflow-scrolling: touch;
+  	overflow: auto;
+}
+
+.unstyle {
+	font: {
+		weight: initial;
+		style: initial;
+	}
+	text-decoration: initial;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.normalize-slick.slick-slider {
+	margin: 0;
+}
+
+.pre-slick:not(.slick-initialized) {
+	display: none;
+}
+
+.slick-slider .slick-track {
+	will-change: left;
+}

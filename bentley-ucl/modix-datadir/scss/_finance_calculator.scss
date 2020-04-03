@@ -1,0 +1,31 @@
+#financingCalculator {
+	.disabled {
+		opacity: 0.2;
+	}
+	
+	.rsv-container {
+		margin: {
+			top: 7px;
+		}
+		line-height: inherit !important;
+	}
+
+	.finance-footer-overview {
+		padding: $websiteStandardSpacing;
+		border: {
+			radius: 5px;
+		}
+		border: 1px solid $lightGray;
+		margin: {
+			top: 40px;
+		}
+	}
+
+	.monthly-installment {
+		color: $white;
+	}
+
+	.finance-submit {
+		padding: $websiteStandardSpacing 0;
+	}
+}

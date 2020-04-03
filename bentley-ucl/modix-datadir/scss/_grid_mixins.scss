@@ -1,0 +1,279 @@
+@mixin elementFloats() {
+	@each $float in left, right, clear {
+		@if ($float != 'clear') {
+			.to-#{$float} {
+				float: $float;
+			}
+		} @else {
+			.clear {
+				clear: both;
+				display: flow-root;
+			}
+		}
+	}
+}
+
+@mixin textAlignment($viewPrefix:null) {
+	@each $align in left, right, center, justify {
+		@if ($viewPrefix) {
+			.#{$viewPrefix}-text-#{$align} {
+				text-align: $align;
+			}
+		} @else {
+			.text-#{$align} {
+				text-align: $align;
+			}
+		}
+	}
+}
+
+@mixin textColumns($viewPrefix:null, $start:1, $end:5) {
+	@for $i from $start through $end {
+		.#{$viewPrefix}-text-column-#{$i} {
+			@include browserPrefixes('column-count', $i);
+			@include browserPrefixes('column-gap', $textColumnSpacing);
+		}
+	}
+}
+
+@mixin generateImageFormat() {
+	@each $div, $mul in (1,1), (3,2), (4,3), (16,9) {
+		.format-#{$div + 'x' + $mul} {
+			display:block;
+			padding: {
+				bottom: ((100% / $div) * $mul);
+			}
+		}
+	}
+}
+
+// Grid View Classes like ".hide .show" etc.
+@mixin gridViewClasses($viewPrefix:null, $start:1, $end:20, $basis:5) {
+	@if ($viewPrefix) {
+		@each $className, $property, $value in $viewDisplayStates {
+			.#{$viewPrefix + '-' + $className} {
+				#{$property}: $value !important;
+			}
+		}
+
+		@for $i from $start through $end {
+			.#{$viewPrefix + ($i * $basis)} {
+				width: #{$i * $basis + '%'};
+			}
+		}
+
+		.#{$viewPrefix}-auto {
+			width: auto;
+		}
+
+		.#{$viewPrefix}66 {
+			width: 66.6666%;
+		}
+
+		.#{$viewPrefix}33 {
+			width: 33.3333%;
+		}
+
+		.#{$viewPrefix}16 {
+			width: 16.6666%;
+		}
+	} @else {
+		@each $className, $property, $value in $viewDisplayStates {
+			.#{$className} {
+				#{$property}: $value !important;
+			}
+		}
+	}
+}
+
+// Generate Offset Classes
+@mixin gridOffsetClasses($viewPrefix:null, $start:1, $end:20, $basis:5) {
+	@for $i from $start through $end {
+		.#{$viewPrefix}-offset-left-#{($i * $basis)} {
+			margin-left: #{$i * $basis + '%'};
+		}
+
+		.#{$viewPrefix}-offset-right-#{($i * $basis)} {
+			margin-right: #{$i * $basis + '%'};
+		}
+	}
+
+	.#{$viewPrefix}-offset-left-66 {
+		margin-left: 66.6666%;
+	}
+
+	.#{$viewPrefix}-offset-right-66 {
+		margin-right: 66.6666%;
+	}
+
+	.#{$viewPrefix}-offset-left-33 {
+		margin-left: 33.3333%;
+	}
+
+	.#{$viewPrefix}-offset-right-33 {
+		margin-right: 33.3333%;
+	}
+
+	.#{$viewPrefix}-offset-left-16 {
+		margin-left: 16.6666%;
+	}
+
+	.#{$viewPrefix}-offset-right-16 {
+		margin-right: 16.6666%;
+	}
+}
+
+// Generate Tiles/Columns-Container Classes
+@mixin gridBuildTilesColumnsContainer($step:5, $start:1, $end:8, $view:null) {
+	@for $i from $start through $end {
+		@if ($view == null) {
+			.tiles-container-#{$step * $i} {
+				margin: -#{$step * $i + 'px'};
+
+				> .column,
+				&.slick-slider .slick-track > .column {
+					display: inline-block;
+					vertical-align: top;
+					padding: #{$step * $i + 'px'};
+				}
+			}
+
+			.columns-container-#{$step * $i} {
+				margin: 0 -#{$step * $i + 'px'};
+
+				> .column,
+				&.slick-slider .slick-track > .column {
+					display: inline-block;
+					vertical-align: top;
+					padding: 0 #{$step * $i + 'px'};
+				}
+			}
+		} @else {
+			[class^="tiles-container-"].#{$view}-space-#{$step * $i},
+			[class*=" tiles-container-"].#{$view}-space-#{$step * $i} {
+				margin: -#{$step * $i + 'px'};
+
+				> .column,
+				&.slick-slider .slick-track > .column {
+					display: inline-block;
+					vertical-align: top;
+					padding: #{$step * $i + 'px'};
+				}
+			}
+
+			[class^="columns-container-"].#{$view}-space-#{$step * $i},
+			[class*=" columns-container-"].#{$view}-space-#{$step * $i} {
+				margin: 0 -#{$step * $i + 'px'};
+
+				> .column,
+				&.slick-slider .slick-track > .column {
+					display: inline-block;
+					vertical-align: top;
+					padding: 0 #{$step * $i + 'px'};
+				}
+			}
+		}
+	}
+}
+
+// Generates Responsive Font Sizes
+@mixin gridFontSize($settings) {
+	$fontResponsive: calc(#{map-get($settings, minFontSize) + 'px'} + (#{map-get($settings, maxFontSize)} - #{map-get($settings, minFontSize)}) * (100vw - #{$mediaScreenS}) / (#{$mediaScreenL / 1px} - #{$mediaScreenS / 1px}));
+
+	.font-size-#{map-get($settings, size)} {
+		font-size: $fontResponsive;
+		line-height: #{map-get($settings, lineHeight)};
+	}
+
+	@if(map-has-key($settings, headlineElem)) {
+		#{map-get($settings, headlineElem)},
+		.#{map-get($settings, headlineElem)} {
+			@extend .font-size-#{map-get($settings, size)}
+		}
+	}
+
+	@if ($responsive) {
+		@include gridRespondTo('l') {
+			@if(map-has-key($settings, headlineElem)) {
+				#{map-get($settings, headlineElem)},
+				.#{map-get($settings, headlineElem)},
+				.font-size-#{map-get($settings, size)} {
+					font-size: #{map-get($settings, maxFontSize) + 'px'};
+				}
+			} @else {
+				.font-size-#{map-get($settings, size)} {
+					font-size: #{map-get($settings, maxFontSize) + 'px'};
+				}
+			}
+		}
+
+		@include gridRespondTo('s') {
+			@if(map-has-key($settings, headlineElem)) {
+				#{map-get($settings, headlineElem)},
+				.#{map-get($settings, headlineElem)},
+				.font-size-#{map-get($settings, size)} {
+					font-size: #{map-get($settings, minFontSize) + 'px'};
+				}
+			} @else {
+				.font-size-#{map-get($settings, size)} {
+					font-size: #{map-get($settings, minFontSize) + 'px'};
+				}
+			}
+		}
+	}
+}
+
+// Generates Responsive Spacings
+@mixin gridDynamicVerticalPadding($settings) {
+	$minSpace: map-get($settings, spacingTBMin);
+	$maxSpace: map-get($settings, spacingTBMax);
+	$spaceTBResp: calc(#{$minSpace + 'px'} + (#{$maxSpace} - #{$minSpace}) * (100vw - #{$mediaScreenS}) / (#{$mediaScreenL / 1px} - #{$mediaScreenS / 1px}));
+
+	.dynamic-vertical-padding-#{$maxSpace}-#{$minSpace} {
+		padding: {
+			top: $spaceTBResp;
+			bottom: $spaceTBResp;
+		}
+	}
+
+	@if ($responsive) {
+		@include gridRespondTo('l') {
+			.dynamic-vertical-padding-#{$maxSpace}-#{$minSpace} {
+				padding: {
+					top: #{$maxSpace + 'px'};
+					bottom: #{$maxSpace + 'px'};
+				}
+			}
+		}
+
+		@include gridRespondTo('s') {
+			.dynamic-vertical-padding-#{$maxSpace}-#{$minSpace} {
+				padding: {
+					top: #{$minSpace + 'px'};
+					bottom: #{$minSpace + 'px'};
+				}
+			}
+		}
+	}
+}
+
+// Mixin to manage responsive breakpoints
+@mixin gridRespondTo($breakpoint) {
+	@if ($responsive) {
+		@if($breakpoint == 'l') {
+			@media(min-width:$mediaScreenL) {	@content; }
+		} @elseif ($breakpoint == 'm') {
+			@media(min-width:$mediaScreenS) and (max-width:$mediaScreenL - 1) { @content; }
+		} @elseif ($breakpoint == 'lm') {
+			@media(min-width:$mediaScreenLM) and (max-width:$mediaScreenL - 1) { @content; }
+		} @elseif ($breakpoint == 'ms') {
+			@media(min-width:$mediaScreenS) and (max-width:$mediaScreenMS - 1) { @content; }
+		} @elseif ($breakpoint == 's') {
+			@media(max-width:$mediaScreenS - 1) { @content; }
+		} @elseif ($breakpoint) {
+			@media #{inspect($breakpoint)} {
+				@content;
+			}
+		}
+	}
+}

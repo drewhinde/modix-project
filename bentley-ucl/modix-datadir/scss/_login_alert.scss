@@ -1,0 +1,47 @@
+/* ##### User Login ##### */
+/* TODO */
+.content-login  {
+	margin: 0 -$websiteStandardSpacing;
+}
+
+.content-login .login-part {
+	padding: 10px $websiteStandardSpacing;
+}
+
+
+/* ##### Search Alert ##### */
+.content-alert-overview {
+	&.alert-item {
+		padding: 0 10px;
+		border-top: 1px solid $lightGray;
+		
+		&:nth-child(2n) {
+			background: $mediumGray;
+		}
+	}
+	
+	&.alert-history {
+		padding: 10px 0;
+		
+		span {		
+			&::after {
+				content: ", ";
+			}
+			
+			:last-child:after {
+				display: none;
+			}
+		}
+	}	
+	
+	&.alert-edit {
+		padding: 10px 0;
+	}
+	
+	&.alert-hint {
+		padding: 20px 0 5px;
+		border: {
+			top: 1px solid $lightGray;
+		}
+	}
+}

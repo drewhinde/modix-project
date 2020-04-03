@@ -1,0 +1,293 @@
+$bentley-icons-logo: "\e91b";
+$bentley-icons-list: "\e905";
+$bentley-icons-grid: "\e902";
+$bentley-icons-instagram: "\e900";
+$bentley-icons-google: "\e903";
+$bentley-icons-linkedin: "\e904";
+$bentley-icons-xing: "\e906";
+$bentley-icons-vimeo: "\e908";
+$bentley-icons-tumblr: "\e90a";
+$bentley-icons-pinterest: "\e90b";
+$bentley-icons-facebook: "\e90c";
+$bentley-icons-youtube: "\e90d";
+$bentley-icons-twitter: "\e90e";
+$bentley-icons-print: "\e90f";
+$bentley-icons-mail: "\e911";
+$bentley-icons-up: "\e901";
+$bentley-icons-down: "\e907";
+$bentley-icons-left: "\e944";
+$bentley-icons-right: "\e912";
+$bentley-icons-cross: "\e845";
+$bentley-icons-tick: "\e801";
+$bentley-icons-star: "\e910";
+$bentley-icons-arrows: "\e913";
+$bentley-icons-globe: "\e914";
+$bentley-icons-sheets: "\e915";
+$bentley-icons-heart: "\e925";
+$bentley-icons-marker: "\e91e";
+$bentley-icons-camera: "\e909";
+$bentley-icons-check: "\e916";
+$bentley-icons-bell: "\e917";
+$bentley-icons-save: "\e918";
+$bentley-icons-arrow-left: "\e919";
+$bentley-icons-arrow-right: "\e91a";
+$bentley-icons-arrow-double-left: "\e920";
+$bentley-icons-arrow-double-right: "\e921";
+$bentley-icons-phone: "\e91c";
+$bentley-icons-view: "\e91d";
+$bentley-icons-view-bold: "\e91f";
+$bentley-icons-zoom-in: "\e922";
+$bentley-icons-zoom-out: "\e923";
+$bentley-icons-direction: "\e924";
+$bentley-icons-envelope: "\e926";
+$bentley-icons-play: "\e927";
+$bentley-icons-printer: "\e928";
+$bentley-icons-share: "\e929";
+
+@font-face {
+	font-family: '#{$project}-icons';
+	src:
+		url('#{$fontPath}/#{$project}-icons.woff2?kdtynx') format('woff2'),
+		url('#{$fontPath}/#{$project}-icons.ttf?kdtynx') format('truetype'),
+		url('#{$fontPath}/#{$project}-icons.woff?kdtynx') format('woff'),
+		url('#{$fontPath}/#{$project}-icons.svg?kdtynx#europcar-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="#{$project}-icons-"],
+[class*=" #{$project}-icons-"] {
+	font-family: '#{$project}-icons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+}
+
+.bentley-icons-logo {
+	&:before {
+		content: $bentley-icons-logo;
+	}
+}
+.bentley-icons-list {
+	&:before {
+		content: $bentley-icons-list;
+	}
+}
+.bentley-icons-grid {
+	&:before {
+		content: $bentley-icons-grid;
+	}
+}
+.bentley-icons-instagram {
+	&:before {
+		content: $bentley-icons-instagram;
+	}
+}
+.bentley-icons-google {
+	&:before {
+		content: $bentley-icons-google;
+	}
+}
+.bentley-icons-linkedin {
+	&:before {
+		content: $bentley-icons-linkedin;
+	}
+}
+.bentley-icons-xing {
+	&:before {
+		content: $bentley-icons-xing;
+	}
+}
+.bentley-icons-vimeo {
+	&:before {
+		content: $bentley-icons-vimeo;
+	}
+}
+.bentley-icons-tumblr {
+	&:before {
+		content: $bentley-icons-tumblr;
+	}
+}
+.bentley-icons-pinterest {
+	&:before {
+		content: $bentley-icons-pinterest;
+	}
+}
+.bentley-icons-facebook {
+	&:before {
+		content: $bentley-icons-facebook;
+	}
+}
+.bentley-icons-youtube {
+	&:before {
+		content: $bentley-icons-youtube;
+	}
+}
+.bentley-icons-twitter {
+	&:before {
+		content: $bentley-icons-twitter;
+	}
+}
+.bentley-icons-print {
+	&:before {
+		content: $bentley-icons-print;
+	}
+}
+.bentley-icons-mail {
+	&:before {
+		content: $bentley-icons-mail;
+	}
+}
+.bentley-icons-up {
+	&:before {
+		content: $bentley-icons-up;
+	}
+}
+.bentley-icons-down {
+	&:before {
+		content: $bentley-icons-down;
+	}
+}
+.bentley-icons-left {
+	&:before {
+		content: $bentley-icons-left;
+	}
+}
+.bentley-icons-right {
+	&:before {
+		content: $bentley-icons-right;
+	}
+}
+.bentley-icons-cross {
+	&:before {
+		content: $bentley-icons-cross;
+	}
+}
+.bentley-icons-tick {
+	&:before {
+		content: $bentley-icons-tick;
+	}
+}
+.bentley-icons-star {
+	&:before {
+		content: $bentley-icons-star;
+	}
+}
+.bentley-icons-arrows {
+	&:before {
+		content: $bentley-icons-arrows;
+	}
+}
+.bentley-icons-globe {
+	&:before {
+		content: $bentley-icons-globe;
+	}
+}
+.bentley-icons-sheets {
+	&:before {
+		content: $bentley-icons-sheets;
+	}
+}
+.bentley-icons-heart {
+	&:before {
+		content: $bentley-icons-heart;
+	}
+}
+.bentley-icons-marker {
+	&:before {
+		content: $bentley-icons-marker;
+	}
+}
+.bentley-icons-camera {
+	&:before {
+		content: $bentley-icons-camera;
+	}
+}
+.bentley-icons-check {
+	&:before {
+		content: $bentley-icons-check;
+	}
+}
+.bentley-icons-bell {
+	&:before {
+		content: $bentley-icons-bell;
+	}
+}
+.bentley-icons-save {
+	&:before {
+		content: $bentley-icons-save;
+	}
+}
+.bentley-icons-arrow-left {
+	&:before {
+		content: $bentley-icons-arrow-left;
+	}
+}
+.bentley-icons-arrow-right {
+	&:before {
+		content: $bentley-icons-arrow-right;
+	}
+}
+.bentley-icons-arrow-double-left {
+	&:before {
+		content: $bentley-icons-arrow-double-left;
+	}
+}
+.bentley-icons-arrow-double-right {
+	&:before {
+		content: $bentley-icons-arrow-double-right;
+	}
+}
+.bentley-icons-phone {
+	&:before {
+		content: $bentley-icons-phone;
+	}
+}
+.bentley-icons-view {
+	&:before {
+		content: $bentley-icons-view;
+	}
+}
+.bentley-icons-view-bold {
+	&:before {
+		content: $bentley-icons-view-bold;
+	}
+}
+.bentley-icons-zoom-in {
+	&:before {
+		content: $bentley-icons-zoom-in;
+	}
+}
+.bentley-icons-zoom-out {
+	&:before {
+		content: $bentley-icons-zoom-out;
+	}
+}
+.bentley-icons-direction {
+	&:before {
+		content: $bentley-icons-direction;
+	}
+}
+.bentley-icons-envelope {
+	&:before {
+		content: $bentley-icons-envelope;
+	}
+}
+.bentley-icons-play {
+	&:before {
+		content: $bentley-icons-play;
+	}
+}
+.bentley-icons-printer {
+	&:before {
+		content: $bentley-icons-printer;
+	}
+}
+.bentley-icons-share {
+	&:before {
+		content: $bentley-icons-share;
+	}
+}

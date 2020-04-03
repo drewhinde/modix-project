@@ -1,0 +1,317 @@
+@include gridFontSize(('maxFontSize': 40, 'minFontSize': 30, 'lineHeight': 1, 'size': xl)); //, 'headlineElem': h1
+@include gridFontSize(('maxFontSize': 30, 'minFontSize': 28, 'lineHeight': 1, 'size': l));
+@include gridFontSize(('maxFontSize': 28, 'minFontSize': 24, 'lineHeight': 1, 'size': m));
+@include gridFontSize(('maxFontSize': 20, 'minFontSize': 18, 'lineHeight': 1, 'size': s));
+@include gridFontSize(('maxFontSize': 18, 'minFontSize': 16, 'lineHeight': 1, 'size': xs));
+
+@include gridDynamicVerticalPadding(('spacingTBMax': 60, 'spacingTBMin': 30));
+
+.dynamic-vertical-padding-60-30.reset-padding-top {
+	padding-top: 0;
+}
+
+.dynamic-vertical-padding-60-30.reset-padding-bottom {
+	padding-bottom: 0;
+}
+
+.format-2x1 {
+	@include aspectRatio(2, 1);
+}
+
+.format-7x3 {
+	@include aspectRatio(7, 3);
+}
+
+.format-8x3 {
+	@include aspectRatio(8, 3);
+}
+
+a {
+	display: inline-block;
+	color: inherit;
+
+	&:hover {
+		color: $primaryHoverColor;
+	}
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.font-bold {
+	font-family: $fontBold;
+}
+
+.regular,
+.font-regular {
+	font-family: $fontRegular;
+}
+
+.light,
+.font-light {
+	font-family: $fontLight;
+}
+
+.invert {
+	color: $white;
+}
+
+.black {
+	color: $black;
+}
+
+.gray {
+	color: $mediumGray;
+}
+
+.highlight {
+	color: $highlight;
+}
+
+.muted {
+	color: $muted;
+}
+
+.disabled {
+	opacity: .2;
+	cursor: default;
+
+	&:hover {
+		color: inherit;
+	}
+
+	&.muted:hover {
+		color: $muted !important;
+	}
+}
+
+.small {
+	font-size: 12px;
+}
+
+.color-primary {
+	color: $primaryColor;
+}
+
+.vert-align {
+	@include gridRespondTo((min-width:$mediaScreenS)) {
+		@include vertical-align(absolute);
+	}
+}
+
+.hr {
+	border: none;
+	border-bottom: solid 1px $lightGray;
+	margin: 0;
+
+	&.hr-footer {
+		border-color: $darkGray;
+	}
+}
+
+.padding {
+	padding: 15px;
+}
+
+.border {
+	border: solid 1px $lightGray;
+}
+
+.underline {
+	border-bottom: solid 1px transparent;
+
+	&:hover {
+		border-color: inherit;
+	}
+
+	&-link {
+		border-color: inherit;
+	}
+}
+
+.table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.equipment.equipment li {
+	position: relative;
+	padding-left: 20px;
+
+	&::before {
+		font-family: '#{$project}-icons';
+		content: "\e801";
+		position: absolute;
+		top: 3px;
+		left: 0;
+		color: $primaryLinkColor;
+	}
+}
+
+// Language Dropdown
+.flag-dropdown {
+	@include gridRespondTo((min-width:$mediaScreenLM)) {
+		width: 70px;
+
+		[class^="#{$project}-icons-"],
+		[class*=" #{$project}-icons-"] {
+			padding-left: 35px;
+		}
+	}
+}
+
+.flag-icon {
+	background: {
+		size: 20px;
+		repeat: no-repeat;
+	}
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 12px;
+
+	&-gb {
+		background-image: url("../img/flags/gb.svg");
+	}
+
+	&-fr {
+		background-image: url("../img/flags/fr.svg");
+	}
+
+	&-es {
+		background-image: url("../img/flags/es.svg");
+	}
+
+	&-pt {
+		background-image: url("../img/flags/pt.svg");
+	}
+
+	&-it {
+		background-image: url("../img/flags/it.svg");
+	}
+
+	&-de {
+		background-image: url("../img/flags/de.svg");
+	}
+}
+
+.flag-title {
+	padding-left: 35px;
+}
+
+.btn-top {
+	@extend .uppercase;
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+
+	@include gridRespondTo((min-width:$mediaScreenL)) {
+		right: 50%;
+		bottom: 30px;
+		margin-right: -636px;
+	}
+
+	[class^="#{$project}-icons-"],
+	[class*=" #{$project}-icons-"] {
+		color: $lightGray;
+		background: $gray;
+		font-size: 24px;
+		padding: 5px;
+		margin-left: 5px;
+		@extend .vertical-middle;
+	}
+
+	&:hover {
+		color: $primaryLinkColor;
+		cursor: pointer;
+
+		[class^="#{$project}-icons-"],
+		[class*=" #{$project}-icons-"] {
+			color: $white;
+			background: $primaryLinkColor;
+		}
+	}
+}
+
+#breadcrumb li:not(:last-child)::after {
+	content: "\e912";
+	font-family: '#{$project}-icons';
+	font-size: 8px;
+	margin-left: 10px;
+	position: relative;
+	top: -1px;
+}
+
+// Bentley styles
+.filter-models {
+	&-section {
+		@extend .pos-relative;
+		border-bottom: solid 1px $lightGray;
+		padding-bottom: 15px;
+
+		@include gridRespondTo((min-width:$mediaScreenL)) {
+			&::before,
+			&::after {
+				content: "";
+				width: 40px;
+				height: 1px;
+				background: $lightGray;
+				position: absolute;
+				bottom: -1px;
+			}
+
+			&::before {
+				left: -40px;
+			}
+
+			&::after {
+				right: -40px;
+			}
+		}
+	}
+}
+
+#breadcrumb li:not(:last-child)::after {
+	content: "\e912";
+	font-family: '#{$project}-icons';
+	font-size: 8px;
+	margin-left: 10px;
+	position: relative;
+	top: -1px;
+}
+
+.container.no-border {
+	border: none;
+}
+
+.border-bottom {
+	border-bottom: 1px solid $primaryColor;
+
+	&.border-light-gray {
+		border-color: $lightGray;
+	}
+}
+
+.border-top {
+	border-top: 1px solid $primaryColor;
+
+	&.border-light-gray {
+		border-color: $lightGray;
+	}
+}
+
+@include gridRespondTo('l') {
+	.l8 {
+		width: 8.333333%;
+	}
+}

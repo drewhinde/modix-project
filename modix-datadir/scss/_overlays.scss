@@ -1,0 +1,309 @@
+/* ##### PopUp ##### */
+.overlay .popup-inject {
+	width: 100%;
+	
+	.video {
+		margin: {
+			bottom: 10px;
+		}
+	}
+}
+
+.overlay {
+	position: fixed;
+	display: table;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: $lightGray;
+	background: rgba(247,247,247,0.9);
+	z-index: 999999;
+	padding: 0 60px;
+	
+	&.alert-overlay > .overlay-inner > .overlay-content {
+		padding: 20px;
+		background: $white;
+
+		.text {
+			margin: {
+				bottom: 15px;
+			}
+		}
+	}
+}
+
+.overlay.preloader {
+	display: table;
+	background: url($preLoader) no-repeat center center $preLoaderBG;
+	background: url($preLoader) no-repeat center center rgba(247,247,247,0.9);
+}
+
+.overlay > .overlay-inner {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	
+	.overlay-content {
+		text-align: left;
+		display: inline-block;
+		padding: 20px;
+		border-radius: 4px;
+		background: $white;
+		box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	}
+}
+
+.overlay .close {
+	position: fixed;
+	width: auto;
+	height: auto;
+	cursor: pointer;
+	right: 0;
+	top: 0;
+	background: $white;
+	padding: 10px;
+	
+	&:hover:before {
+		opacity:1.0;
+	}
+	
+	&:before {
+		opacity: 0.5;
+	}
+	
+	&:after {
+		font: {
+			size: 14px;
+		}
+		position: absolute;
+		top: 10px;
+		right: 100%;
+		padding: {
+			right: 10px;
+		}
+	}
+}
+
+.overlay.mobile .close:after {
+	display: none;
+}
+
+.overlay.mobile {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: $darkGray;
+	background: rgba(247,247,247,0.9);
+	overflow-y: scroll;
+	display: block;
+
+	> .overlay-inner {
+		text-align: center;
+		display: block;
+		
+		> .overlay-content {
+			text-align: left;
+			display: inline-block;
+			padding: 20px;
+			border-radius: 4px;
+			background: $white;
+			box-shadow: 0 0 20px rgba(0,0,0,0.1);
+		}
+	}
+}
+
+
+/* ##### Gallery Popup Slide ##### */
+.overlay .prev {
+	background: $white;
+	font: {
+		size: 30px;
+	}
+	cursor: pointer;
+	position: fixed;
+	top: 50%;
+	left: 0;
+	padding: 10px;
+	margin: {
+		top: -25px;
+	}
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+	
+	&.icon-left-open {
+		&::before {
+			opacity: 0.4;
+		}
+	}
+	
+	&:hover::before {
+		opacity: 1;
+	}
+}
+
+.overlay .next {
+	background: $white;
+	font: {
+		size: 30px;
+	}
+	cursor: pointer;
+	position: fixed;
+	top: 50%;
+	right: 0;
+	padding: 10px;
+	margin: {
+		top: -25px;
+	}
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+
+	&.icon-right-open {
+		&::before {
+			opacity: 0.4;
+		}
+		
+		&:hover::before {
+			opacity: 1;
+		}
+	}
+}
+
+.overlay .gal-frame {
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	
+	img {
+		vertical-align: middle;
+		max-height: 75vh;
+		max-width: 100%;
+	}
+}
+
+
+/* ##### Page Overlay (Video / Ajax) ##### */
+.page-overlay {
+	z-index: 10000;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	transition: all 1s ease-out;
+	@include browserPrefixes(transform, translate(100%, 0));
+	background: $white;
+	
+	&.animate {
+		@include browserPrefixes(transform, translate(0, 0));
+	}
+	
+	.page-overlay-bar {
+		width: 70px;
+		padding: 0 10px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		background: $lightGray;
+		
+		.close {
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			margin: 0 10px;
+			background: $lightGray;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+			
+			&:before {
+				font: {
+					family: $iconFontName;
+				}
+				content: '\e809';
+				display: inline-block;
+				vertical-align: top;
+				line-height: inherit;
+			}
+			
+			&:hover {
+				background: $primaryLinkColor;
+				color: $white;
+			}
+		}
+	}
+	
+	&.animation-complete .page-overlay-bar {
+		position: fixed;
+		
+		.close {		
+			&:before {
+				font-family: $iconFontName;
+				content: '\e80a';
+				vertical-align: top;
+				line-height: inherit;
+				@include browserPrefixes(transform, translate(1px, 0));
+			}
+		}
+	}
+}
+
+.page-overlay .page-overlay-content {
+	position: absolute;
+	top: 0;
+	left: 70px;
+	right: 0;
+	bottom: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: $lightGray;
+	
+	.loader {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	
+	.video-container {
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		@include browserPrefixes(transform, translate(0, -50%));
+	}
+}
+
+@include gridRespondTo('s') {
+	/* ##### Page Overlay (Video / Ajax) ##### */
+	.page-overlay {
+		&.animation-complete .page-overlay-bar {
+			position: relative;
+		}
+
+		.page-overlay-bar {
+			width: 100%;
+			padding: 1 0px;
+			height: 70px;
+		}
+
+		.page-overlay-content {
+			position: absolute;
+			top: 70px;
+			left: 0;
+		}
+	}
+}
+
+@include gridRespondTo((max-width:$mediaScreenL - 1)) {
+	.overlay {
+		padding: 0 20px;
+	}
+}
